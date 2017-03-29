@@ -3,6 +3,7 @@ title: 3 Rules for Not Getting Stonewalled on GitHub Issues
 teaser: If you’re arguing, you’ve already lost. Good advice for contributors and project maintainers alike.
 category: tips
 tags: [communication, github, foss]
+reddit_post: 'https://www.reddit.com/r/programming/comments/625bz5/3_rules_for_not_getting_stonewalled_on_github/'
 ---
 
 Most issues filed on GitHub (if they are issues at all) fall into one of three categories: <dfn>bug reports</dfn>, <dfn>feature requests</dfn>, and <dfn>other change requests</dfn>. Each type of issue requires stronger communication skills to be taken seriously than the one before it:
