@@ -9,6 +9,7 @@ slogan: Just my 2¢
 avatar: /i/avatar.png
 banner: /i/mountains.svg
 url: http://ryanlue.com
+baseurl: ''
 repo: https://github.com/rlue/rlue.github.io
 
 nav_menu:
