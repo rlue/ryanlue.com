@@ -40,6 +40,11 @@ projects:
     url: https://github.com/rlue/something_like_that
     role: Creator
     category: Gems
+  - title: Timer
+    teaser: A command-line pomodoro/interval timer.
+    url: https://github.com/rlue/timer
+    role: Creator
+    category: Bash Scripts
 
 #################
 # Site Settings #
