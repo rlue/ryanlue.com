@@ -72,6 +72,10 @@ margin-bottom: 0.5rem;
       margin-bottom: 2rem;
     }
   }
+
+  @media (max-width: 599px) {
+    padding-left: 0;
+  }
 }
 
 /* # Components
