@@ -7,8 +7,6 @@ stylesheet: /about/cv.css
 
 <!---
 TODO: Add Chinese version (research how to switch?)
-TODO: Add CSS for smaller screen widths
-TODO: Add click-for-PDF link
 -->
 
 <header>
