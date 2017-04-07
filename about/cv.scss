@@ -1,0 +1,260 @@
+---
+---
+
+@import 'generic.normalize';
+
+/* # Base
+   ======================================== */
+
+html {
+  @media print {
+    font-size: 10pt;
+  }
+}
+
+body {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+header {
+  @media screen {
+    margin: 2rem 0;
+  }
+}
+
+h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+a {
+  text-decoration: none;
+
+  color: hsl(134,63%,32%); border-bottom: 1px solid #d9d9d9;
+  &:visited { border-bottom-color: #fff; }
+  &:hover   { border-bottom-color: hsl(134,63%,32%); }
+  &:active  { color: #fff; background-color: hsl(134,63%,25%); }
+
+  @media print {
+    color: #333; border-bottom: none;
+  }
+}
+
+li {
+margin-bottom: 0.5rem;
+}
+
+/* # Objects
+   ======================================== */
+
+%badge {
+  float: right;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+%featured_list {
+  list-style: none;
+
+  > li {
+    border-left: 0.375rem solid hsl(134,63%,25%);
+    padding-left: 1rem;
+
+    > *:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* # Components
+   ======================================== */
+
+.nameplate__email {
+  border-bottom-color: #fff;
+
+  &:hover {
+    border-bottom-color: lighten(#333, 65%);
+  }
+
+  &:active {
+    background-color: transparent;
+    border-bottom-color: transparent;
+  }
+  @media (max-width: 599px) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.nameplate__heading {
+  display: inline;
+  font-size: 3rem;
+  color: #333;
+
+  &:active {
+    color: lighten(#333, 65%);
+  }
+
+  &::before {
+    content: 'hello@';
+    color: lighten(#333, 65%);
+  }
+
+  &::after {
+    content: '.com';
+    color: lighten(#333, 65%);
+  }
+
+  @media (max-width: 599px) {
+    font-size: 8.013vw;
+  }
+}
+
+.nameplate__contact {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+
+  @media print, (max-width: 599px) {
+    > li {
+      .nameplate__contact-list-marker {
+        float: none;
+        margin: 0;
+      }
+    }
+  }
+
+  @media print {
+    > li {
+      display: inline;
+
+      &.nameplate__pdf-link {
+        display: none;
+      }
+
+      &::before {
+        content: " / ";
+      }
+
+      &:first-child::before {
+        content: "";
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    text-align: center;
+  }
+}
+
+.nameplate__contact-list-marker {
+  float: right;
+  margin-left: 0.5rem;
+}
+
+.nameplate__phone {
+  &::before {
+    content: "+886 ";
+  }
+}
+
+#projects {
+  @media print {
+    &::after {
+      content: ' (more at https://github.com/rlue/)';
+      font-weight: normal;
+      font-size: 1rem;
+      font-style: italic;
+      float: right;
+      line-height: 2.1rem;
+    }
+  }
+}
+
+.projects__section + ul {
+  @extend %featured_list;
+}
+
+.projects__role {
+  @extend %badge;
+
+  &--creator {
+    background-color: #511a3d;
+  }
+
+  &--contributor {
+    background-color: #a11252;
+  }
+
+}
+
+.projects__name {
+  font-weight: bold;
+}
+
+#skills + ul {
+  list-style: none;
+
+  > li {
+    position: relative;
+
+    > .skills__list-marker {
+      display: block;
+      position: absolute;
+      left: -2rem;
+    }
+  }
+}
+
+.skills__reference {
+  font-style: italic;
+
+  @media print {
+    display: none;
+  }
+}
+
+.work-history__position + ul {
+  @extend %featured_list;
+
+  > li > ul {
+    list-style-type: disc;
+  }
+}
+
+.work-history__tenure {
+  @extend %badge;
+  background-color: hsl(134,63%,25%);
+}
+
+.education__institution {
+  display: block;
+  font-style: italic;
+}
+
+.education__date {
+  @extend %badge;
+  background-color: hsl(134,63%,25%);
+}
+
+#interests + ul {
+  list-style: none;
+
+  > li {
+    position: relative;
+
+    > .interests__list-marker {
+      display: block;
+      position: absolute;
+      left: -2rem;
+    }
+  }
+}
