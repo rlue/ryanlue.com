@@ -5,47 +5,8 @@ category: problems
 tags: [javascript, security, usability]
 ---
 
-tl;dr How I Do It
------------------
-
-Since this site uses Jekyll, I’ve opted to obfuscate my email address programmatically using Liquid:
-
-```liquid
-{% raw %}{% assign plain_link = 'mailto:' | append: site.contact %}
-{% assign obfuscated_link = plain_link | url_encode | split: '' | reverse | join: '' %}
-<a class="email" href="{{ obfuscated_link }}">Contact</a>{% endraw %}
-```
-
-Thus, a link to `mailto:pamela@baywatch.org` becomes `gro.hctawyab04%alemapA3%otliam`, which gets corrected at load time with the following JavaScript:
-
-```javascript
-var Contact = {};
-
-Contact.deobfuscateLink = function(element) {
-    var absolutePath   = element.href,
-        pathSegments   = absolutePath.split('/'),
-        obfuscatedLink = pathSegments[pathSegments.length - 1],
-        unreversedLink = obfuscatedLink.split('').reverse().join(''),
-        deobfuscation  = decodeURIComponent(unreversedLink);
-    return deobfuscation;
-}
-
-Contact.patchButtons = function(klass) {
-    var elements = document.getElementsByClassName(klass);
-    for (i = 0; i < elements.length; i++) {
-        elements[i].href = Contact.deobfuscateLink(elements[i]);
-    }
-}
-
-Contact.patchButtons('email');
-```
-
-### Security implications
-
-This solution provides [security through obscurity][sto]{:target="_blank"}, which is fine for a Joe Blow like me to use in a low-stakes scenario like this, but would be totally bogus for a large-scale company when their users’ personal information is on the line. If you want actual security, use a CAPTCHA.
-
-The Problem
------------
+Background
+----------
 
 ### Need help? Contact pamela (at) baywatch (dot) org
 
@@ -56,6 +17,11 @@ You’ve seen it before: an email address written out as a string of separate wo
 Why do people do this?
 
 Spammers need lists of email addresses, so they buy them from people who write <dfn>email harvesting bots</dfn> that crawl the Internet all day long, looking for text that resembles an email address. Rewriting your contact information in an unpredictable format keeps it out of a bot’s filters.
+
+The next section explores the _relevance_ of such spam prevention measures; for a rundown of technical solutions, skip down to [Alternatives][tldr].
+
+Analysis
+--------
 
 ### Does it work?
 
@@ -98,8 +64,8 @@ The clumsy workarounds described above would be acceptable if you were selling a
 
 Supposing you actually care, think of it like trying not to get your bike stolen – your lock doesn’t have to be bulletproof; it just has to be thick enough to get the thief to bother someone else instead.
 
-Solutions
----------
+Alternatives
+------------
 
 1. Obfuscate email addresses.
 2. Anonymize them by implementing a relay (like [Craigslist does][cl]{:target="_blank"}).
@@ -107,7 +73,7 @@ Solutions
 
 ### Option 1: The easy way out
 
-Obfuscating email addresses is the simplest, in addition to being virtually unnoticeable (a usability bonus) and not particularly secure (which makes it not much of a solution at all).
+Obfuscating email addresses is the simplest, in addition to being virtually unnoticeable (a usability bonus) and not particularly secure (which makes it really not much of a solution at all).
 
 #### In plain HTML
 
@@ -125,7 +91,39 @@ If I had to venture a guess, I’d say it’s because it’s simply not worth th
 
 #### With the help of JavaScript
 
-But if you’re small fries, you can get by with a half-baked solution. See the [tl;dr at the top][tldr] if you skipped it.
+But if you’re small fries, you can get by with a half-baked solution, like the one I use on this site. Since it’s a Jekyll blog, I’ve opted to obfuscate my email address programmatically using Liquid:
+
+```liquid
+{% raw %}{% assign plain_link = 'mailto:' | append: site.contact %}
+{% assign obfuscated_link = plain_link | url_encode | split: '' | reverse | join: '' %}
+<a class="email" href="{{ obfuscated_link }}">Contact</a>{% endraw %}
+```
+
+Thus, a link to `mailto:pamela@baywatch.org` becomes `gro.hctawyab04%alemapA3%otliam`, which gets corrected at load time with the following JavaScript:
+
+```javascript
+var Contact = {};
+
+Contact.deobfuscateLink = function(element) {
+    var absolutePath   = element.href,
+        pathSegments   = absolutePath.split('/'),
+        obfuscatedLink = pathSegments[pathSegments.length - 1],
+        unreversedLink = obfuscatedLink.split('').reverse().join(''),
+        deobfuscation  = decodeURIComponent(unreversedLink);
+    return deobfuscation;
+}
+
+Contact.patchButtons = function(klass) {
+    var elements = document.getElementsByClassName(klass);
+    for (i = 0; i < elements.length; i++) {
+        elements[i].href = Contact.deobfuscateLink(elements[i]);
+    }
+}
+
+Contact.patchButtons('email');
+```
+
+This solution provides [security through obscurity][sto]{:target="_blank"}, which is fine for a Joe Blow like me to use in a low-stakes scenario like this, but would be totally bogus for a large-scale company when their users’ personal information is on the line. If you want actual security, use a CAPTCHA.
 
 ### Options 2 & 3: If you actually care about security
 
@@ -137,4 +135,4 @@ But if you’re small fries, you can get by with a half-baked solution. See the 
 [atl]: https://www.theatlantic.com/technology/archive/2011/01/the-end-of-spam/69003/
 [cl]: https://www.craigslist.org/about/help/email-relay
 [cf]: https://security.stackexchange.com/a/116360
-[tldr]: #tldr-how-i-do-it
+[tldr]: #alternatives
