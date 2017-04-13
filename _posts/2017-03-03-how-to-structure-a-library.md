@@ -40,7 +40,7 @@ would reside at `lagoon/inlet.rb`. Both would be placed under your project root�
         │   └── inlet.rb
         └── lagoon.rb
 
-Note that file structure and namespacing have no effect on each other <i lang="la" class="foreign">per se;</i> the expectation that they match is purely a matter of convention (and [enshrined in Rails][ralp]).
+Note that file structure and namespacing have no effect on each other <i lang="la" class="foreign">per se;</i> the expectation that they match is purely a matter of convention (and [enshrined in Rails][ralp]{:target="_blank"}).
 
 #### Concept check
 
@@ -126,7 +126,7 @@ In addition, you may also have noticed the following in other projects:
 * `data/` for raw data your program works on/with
 * `doc/` for documentation (if you use RDoc, YARD, etc.)
 
-See the formal specification [here][rps].
+See the formal specification [here][rps]{:target="_blank"}.
 
 Many other files (`.git/`, `Gemfile`, `Rakefile`, `.rubocop.yml`, `.travis.yml`) belong to useful development tools, but are not a part of the library itself. As a general rule, if you don’t know what it’s for, you probably don’t need it (yet). 
 
@@ -142,12 +142,12 @@ So as strange as it sounds, to put all this into practice and actually start bui
 ---
 
 [^1]:
-    If you don’t know what that means or how to do it elegantly, read [<cite>Practical Object-Oriented Design in Ruby</cite>][poodr] by Sandi Metz, and don’t come back until you’ve finished. <cite>POODR</cite> conveys, in clearer terms than any other book I’ve found, how object-oriented programming works and why it’s a big deal – indeed, why it’s the paradigm around which Ruby (among other powerfully expressive languages) was built. 
+    If you don’t know what that means or how to do it elegantly, read [<cite>Practical Object-Oriented Design in Ruby</cite>][poodr]{:target="_blank"} by Sandi Metz, and don’t come back until you’ve finished. <cite>POODR</cite> conveys, in clearer terms than any other book I’ve found, how object-oriented programming works and why it’s a big deal – indeed, why it’s the paradigm around which Ruby (among other powerfully expressive languages) was built. 
 
     It’s so important, I’ll say it twice – do yourself a favor and read Sandi Metz’s book right now. Don’t add it to your reading list; put down your current read and pick this one up instead. If you don’t understand what you can do with OOP, you’re wasting Ruby’s greatest potential.
 
 [^2]:
-    [This StackOverflow question][nmspc] should clarify how namespaces work.
+    [This StackOverflow question][nmspc]{:target="_blank"} should clarify how namespaces work.
 
 [^3]:
     Except that no one uses dental dams.
@@ -157,7 +157,7 @@ So as strange as it sounds, to put all this into practice and actually start bui
 
     Ordinarily, this isn’t something you have to do yourself – when you use other people’s libraries (gems), RubyGems automatically manages the load path for you. But the library you’ve just started to build isn’t a fully-fledged gem yet, so RubyGems doesn’t know it exists. If you want to manually test or debug your code, you’ll need to set up the load path somehow.
 
-    Resist the temptation to set it up from within the library itself (a [common anti-pattern][load]). In my next post, I describe [how to get Bundler to do it for you][reqr] – but in any case, it’s crucial that you arrange your library according to convention. Many different development tools and workflows exist, but they all depend on being able to find things where they usually belong. In a post dating from 2009, Yehuda Katz explains how [developers should be free to decide how to manage their load paths themselves][lpth]:
+    Resist the temptation to set it up from within the library itself (a [common anti-pattern][load]{:target="_blank"}). In my next post, I describe [how to get Bundler to do it for you][reqr] – but in any case, it’s crucial that you arrange your library according to convention. Many different development tools and workflows exist, but they all depend on being able to find things where they usually belong. In a post dating from 2009, Yehuda Katz explains how [developers should be free to decide how to manage their load paths themselves][lpth]{:target="_blank"}:
 
     > Rubygems provides two things for the Ruby community.
     > 

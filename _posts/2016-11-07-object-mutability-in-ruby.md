@@ -5,7 +5,7 @@ category: fundamentals
 tags: [ruby]
 ---
 
-In programming, [conciseness is a virtue][sip]. But back when I was first learning to program in Ruby (which was not all that long ago), I would occasionally discover that the concisest way of doing something was not actually the correct way to do it – that, due to some unforeseen aspect of the language’s design, I would try to simplify a set of instructions and wind up with something entirely different from what I had intended. 
+In programming, [conciseness is a virtue][sip]{:target="_blank"}. But back when I was first learning to program in Ruby (which was not all that long ago), I would occasionally discover that the concisest way of doing something was not actually the correct way to do it – that, due to some unforeseen aspect of the language’s design, I would try to simplify a set of instructions and wind up with something entirely different from what I had intended. 
 
 One case that comes to mind is when I tried to initialize two variables as empty arrays, and then populate each one separately:
 
@@ -101,7 +101,7 @@ Other objects (booleans like `true` and `false`, or any `Fixnum`) are **immutabl
 
 Mutable objects can be made immutable with the `#freeze` method, but there is no way to take an immutable object and make it mutable.
 
-_(Note: There is talk of [making all strings immutable in Ruby 3.0][tweet].)_
+_(Note: There is talk of [making all strings immutable in Ruby 3.0][tweet]{:target="_blank"}.)_
 
 This all gives rise to another question: When new variables are assigned to existing variables, do the new variables point to the old object IDs (“pass by reference”), or do they point to a new one with the old data copied into it (“pass by value”)? If the former, changes to one variable will result in changes to the other. If not, changes to one variable leave the other untouched. 
 

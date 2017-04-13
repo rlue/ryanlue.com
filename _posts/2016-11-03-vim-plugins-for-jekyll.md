@@ -8,11 +8,11 @@ tags: [vim, jekyll, workflow]
 What is Jekyll?
 ---------------
 
-Jekyll is a command-line tool for building websites (and especially blogs) from text files. In the words of creator Tom Preston-Werner, Jekyll is for “[blogging like a hacker][tpw].”
+Jekyll is a command-line tool for building websites (and especially blogs) from text files. In the words of creator Tom Preston-Werner, Jekyll is for “[blogging like a hacker][tpw]{:target="_blank"}.”
 
 More precisely, Jekyll takes a set of plain-text templates, content, and other files in a format that _it_ understands, and assembles them into another set of plain-text files in a format that _a web browser_ understands – the benefit being that the former is easier to work with (manage, maintain, extend, reuse) than the latter.
 
-The resulting files can then be uploaded to a simple webserver and made available to your adoring public without all the overhead and security issues that typically come with a CMS like WordPress (namely, a database and server-side application logic). Many programmers opt to [host their Jekyll sites on GitHub Pages][ghp]. In fact, you could even host a Jekyll site from the `Public` directory of your DropBox, if you wanted. 
+The resulting files can then be uploaded to a simple webserver and made available to your adoring public without all the overhead and security issues that typically come with a CMS like WordPress (namely, a database and server-side application logic). Many programmers opt to [host their Jekyll sites on GitHub Pages][ghp]{:target="_blank"}. In fact, you could even host a Jekyll site from the `Public` directory of your DropBox, if you wanted. 
 
 Many programmers tend to favor Jekyll for the same reason that, say, hippies like to grow their own food: 
 
@@ -27,7 +27,7 @@ In the spirit of blogging like a hacker, this site is built using Jekyll and Vim
 
 ### Live refresh
 
-[Browserlink][blk] is an indispensable Vim plugin for basic web development. It hooks into your browser and forces a refresh every time you save a file, so you can have your website open in Chrome and your `index.html` file open in Vim, and when you `:write` changes to the latter, they just show up in the former without any manual intervention. 
+[Browserlink][blk]{:target="_blank"} is an indispensable Vim plugin for basic web development. It hooks into your browser and forces a refresh every time you save a file, so you can have your website open in Chrome and your `index.html` file open in Vim, and when you `:write` changes to the latter, they just show up in the former without any manual intervention. 
 
 It’s a huge time-saver and fits well with Jekyll’s built-in development server. Ordinarily, to preview your site as you work on it, you would invoke
 
@@ -37,7 +37,7 @@ $ jekyll serve
 
 in a terminal, then visit http://localhost:4000/ in your browser. Jekyll watches for changes within the project folder, and rebuilds the site from scratch with each one. The only problem is that Browserlink is a bit too fast for Jekyll, and will force a refresh before the new changes are ready.
 
-Follow the installation and configuration instructions for [Browserlink][blk], then add this to your `.vimrc`:
+Follow the installation and configuration instructions for [Browserlink][blk]{:target="_blank"}, then add this to your `.vimrc`:
 
 ~~~ viml
 " Disable built-in event handling...
@@ -71,7 +71,7 @@ augroup browserlink
 augroup END
 ~~~
 
-Now, when you save changes within a Jekyll project folder, the browser should reload after a 1-second delay, which should be just enough for the new changes to spawn first. (If you have a large site that requires more time to build, [try `$ jekyll serve --incremental`][inc].) 
+Now, when you save changes within a Jekyll project folder, the browser should reload after a 1-second delay, which should be just enough for the new changes to spawn first. (If you have a large site that requires more time to build, [try `$ jekyll serve --incremental`][inc]{:target="_blank"}.) 
 
 ### Syntax highlighting & comment wrapping
 
@@ -79,7 +79,7 @@ Jekyll mixes multiple languages into each file. Your `index.html` template file 
 
 Composite filetypes are ordinarily no problem for vim, which offers multi-syntax highlighting out-of-the-box – _but only when Vim knows it’s displaying a Liquid file._ (That is to say, multi-syntax highlighting is disabled if `filetype` is set to anything other than `liquid`.) Vim usually guesses the filetype based on the file extension, but Jekyll throws a wrench in the works by omitting the `.liquid` extension altogether in project files, meaning that a Liquid XML file ends in `.xml` and _not_ `.xml.liquid`, and Vim will open it as such.
 
-Tim Pope’s [vim-liquid][vlq] plugin solves this problem by automatically setting the Liquid filetype on any file that includes YAML frontmatter (as most Jekyll project files do), but this fix introduces a new wrinkle: when you `:set filetype=liquid`, Vim defaults to using Liquid _comment markers_, too. And since I use [vim-commentary][vcm] to wrap text in comment markers, I wind up with  `{% raw %}{% comment %} Liquid comments {% endcomment %}{% endraw %}` when I’m really trying to set `<!-- HTML/XML comments -->`. Fortunately, it’s an easy fix.
+Tim Pope’s [vim-liquid][vlq]{:target="_blank"} plugin solves this problem by automatically setting the Liquid filetype on any file that includes YAML frontmatter (as most Jekyll project files do), but this fix introduces a new wrinkle: when you `:set filetype=liquid`, Vim defaults to using Liquid _comment markers_, too. And since I use [vim-commentary][vcm]{:target="_blank"} to wrap text in comment markers, I wind up with  `{% raw %}{% comment %} Liquid comments {% endcomment %}{% endraw %}` when I’m really trying to set `<!-- HTML/XML comments -->`. Fortunately, it’s an easy fix.
 
 Create a `.vim/after/ftplugin/liquid.vim` file with the following code:
 

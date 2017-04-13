@@ -8,7 +8,7 @@ tags: [etymology, jekyll, seo]
 Slug? What’s a Slug?
 --------------------
 
-I stumbled across this term while reading up on [Liquid filters used in Jekyll][lqd]:
+I stumbled across this term while reading up on [Liquid filters used in Jekyll][lqd]{:target="_blank"}:
 
 > #### Slugify
 > 
@@ -29,7 +29,7 @@ Not every URL has one, but when it does, this is what it looks like:
 So Where Did It Get Its Name?
 -----------------------------
 
-The term [has its origins in journalism][times]: whenever a story is written, it’s registered into a system and labeled with a short (< 10-letter) code, along with all the other stories being considered for the day’s publication. As one <cite>New York Times</cite> editor put it,
+The term [has its origins in journalism][times]{:target="_blank"}: whenever a story is written, it’s registered into a system and labeled with a short (< 10-letter) code, along with all the other stories being considered for the day’s publication. As one <cite>New York Times</cite> editor put it,
 
 > “Slugs make life easier around the newsroom. Instead of saying, ‘Would you
 > please shorten that article about President Obama’s immigration announcement

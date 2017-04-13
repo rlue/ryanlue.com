@@ -15,7 +15,7 @@ Releasing a gem is easy-peasy:
 3. `gem build [GEMSPEC_FILE]`
 4. `gem push [GEM]`
 
-That’s it! So why are both this guide and the [official guide][myog] in the neighborhood of 2,000 words long? Mostly because Steps 1 and 2 can require a lot of elaboration, depending on how much prior experience you have. Where the official guide is a hello-world tutorial for the absolute beginner, this guide is presented as a conceptual primer and description of best practices for those who are new to the RubyGems system, but not the creation of software libraries in general.
+That’s it! So why are both this guide and the [official guide][myog]{:target="_blank"} in the neighborhood of 2,000 words long? Mostly because Steps 1 and 2 can require a lot of elaboration, depending on how much prior experience you have. Where the official guide is a hello-world tutorial for the absolute beginner, this guide is presented as a conceptual primer and description of best practices for those who are new to the RubyGems system, but not the creation of software libraries in general.
 
 The Blind Men and the Elephant
 ------------------------------
@@ -65,7 +65,7 @@ When you install Pry, it comes with a few dependencies (coderay, method\_source,
 
     $ zless metadata.gz
 
-If you’ve seen the [listing for Pry on RubyGems][pry], you’ll notice that a lot of this information looks familiar. In fact, each listing on RubyGems is automatically generated from this metadata file – there is no way for developers to manually edit a gem’s listing through the website.
+If you’ve seen the [listing for Pry on RubyGems][pry]{:target="_blank"}, you’ll notice that a lot of this information looks familiar. In fact, each listing on RubyGems is automatically generated from this metadata file – there is no way for developers to manually edit a gem’s listing through the website.
 
 That means that before you can package a gem (Step 3 above), you must compile all of this information into a metadata file of your own (Step 1 above). (If you’re sweating over the length of the file you’re looking at now, relax – the gemspec file it was generated from is only 18 lines long.)
 
@@ -75,7 +75,7 @@ Note that this file is not included in the library that ultimately gets installe
 
 `data.tar.gz` holds the part of the gem that gets installed to your system. (I wouldn’t judge you for just taking my word for it, but you’re welcome to confirm this on your own.[^1]) 
 
-_Every file that belongs in your gem must be explicitly listed in your gemspec._ Files do not get automatically added just because they were in your project root. The question of exactly which project files should be included in a gem [has been disputed <i lang="la" class="foreign">ad nauseam</i>][rubo]; my recommendations are provided in the following section.
+_Every file that belongs in your gem must be explicitly listed in your gemspec._ Files do not get automatically added just because they were in your project root. The question of exactly which project files should be included in a gem [has been disputed <i lang="la" class="foreign">ad nauseam</i>][rubo]{:target="_blank"}; my recommendations are provided in the following section.
 
 Enough overview. Let’s make some software!
 
@@ -84,7 +84,7 @@ Step 1: Write the Gemspec
 
 You could save it for last, but if you do, you’ll end up having to rewrite your Gemfile to tie the two together (details below), so you might as well just get it out of the way.
 
-There’s no reason to start from scratch, though. Just use another project’s gemspec as a template (you can find them all over GitHub). [Pry’s][prygs] is as good as any, and as promised, it’s only 18 lines long:
+There’s no reason to start from scratch, though. Just use another project’s gemspec as a template (you can find them all over GitHub). [Pry’s][prygs]{:target="_blank"} is as good as any, and as promised, it’s only 18 lines long:
 
 ~~~ruby
 require File.expand_path('../lib/pry/version', __FILE__)
@@ -114,11 +114,11 @@ end
 
 Create a file named `<gem_name>.gemspec` in your project root, save this code to it, and edit as needed.
 
-See the [official gemspec reference guide][spec] for more. At a minimum, you must provide the `name`, `version`, `author`, and `summary` attributes, or else `gem build` will fail.
+See the [official gemspec reference guide][spec]{:target="_blank"} for more. At a minimum, you must provide the `name`, `version`, `author`, and `summary` attributes, or else `gem build` will fail.
 
 ### `s.name` & `s.version`
 
-Check the official documentation for a rundown on the conventions for [naming][nyg] and [versioning][semver].
+Check the official documentation for a rundown on the conventions for [naming][nyg]{:target="_blank"} and [versioning][semver]{:target="_blank"}.
 
 You can place the version number directly into the gemspec, but since that never makes its way into the source code, it’s customary to define it as a constant within your gem’s primary namespace:
 
@@ -242,7 +242,7 @@ Thanks for your contribution. Developers like you are what make this vibrant com
         $ gem which pry
 
 [^2]:
-    [Yehuda Katz explains this at length][gsvgf], but the upshot is this: the purpose of `Gemfile.lock` is to ensure that anyone else working on your project or running your app has the same exact runtime environment (the same exact versions of all the same dependencies) that you did when you made it. This way, everything is set up exactly as it was the last time your application worked, without any unexpected errors (due to dependencies, at least).  
+    [Yehuda Katz explains this at length][gsvgf]{:target="_blank"}, but the upshot is this: the purpose of `Gemfile.lock` is to ensure that anyone else working on your project or running your app has the same exact runtime environment (the same exact versions of all the same dependencies) that you did when you made it. This way, everything is set up exactly as it was the last time your application worked, without any unexpected errors (due to dependencies, at least).  
 
     But if your project is a gem, you don’t want to enforce dependency versions so strictly. If your gem only works with a very narrow range of versions of its dependencies, that can cause problems down the road for developers who depend on your gem in turn. It’s best to let other contributors test and develop your gem against the full range of dependency versions specified in your Gemfile.
 
@@ -251,7 +251,7 @@ Thanks for your contribution. Developers like you are what make this vibrant com
 
     RubyGems predates both Bundler and GitHub by about five years (2003 vs. 2008). Time was someone might `$ gem install --dev` to start making contributions to a project, but I can’t imagine why anyone would choose that method over `$ git clone` in 2017.  
 
-    Apart from supplying information for the `--dev` CLI option, the only other practical consequence of development dependencies is that they will appear in the metadata, and thus in the gem’s listing on the RubyGems site. The importance of either of these benefits is beyond the author’s realm of expertise, but a quick survey of the [top 10 most-downloaded gems of all time][top10] indicates that even seminal projects are divided on this practice: 
+    Apart from supplying information for the `--dev` CLI option, the only other practical consequence of development dependencies is that they will appear in the metadata, and thus in the gem’s listing on the RubyGems site. The importance of either of these benefits is beyond the author’s realm of expertise, but a quick survey of the [top 10 most-downloaded gems of all time][top10]{:target="_blank"} indicates that even seminal projects are divided on this practice: 
 
     * 3 have no Gemfile at all (<i class="foreign">i.e.,</i> don’t use Bundler, because one of them _is_ Bundler);
     * 2 Gemfiles inherit from the gemspec entirely;

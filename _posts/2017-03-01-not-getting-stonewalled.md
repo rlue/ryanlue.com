@@ -19,7 +19,7 @@ Synopsis
 
 Ruby has a package manager called RubyGems. Like all package managers, it defines a specification for precisely what a package (or <dfn>gem</dfn>) consists of. If you want to create a gem, you have to prepare both <dfn>data</dfn> and <dfn>metadata</dfn> (or, the software itself and a short survey of information about it) to bundle together into a `.gem` file.
 
-I wanted to create a gem. So, I read through the official documentation. It was easy to follow, but I still had some questions. Google turned up no definitive answers – my best lead was [a convoluted and inconclusive discussion on GitHub Issues][dadp], posted to the RubyGems project itself, raising precisely the same question I had been wondering about: how important is it to list development dependencies in the gem metadata?
+I wanted to create a gem. So, I read through the official documentation. It was easy to follow, but I still had some questions. Google turned up no definitive answers – my best lead was [a convoluted and inconclusive discussion on GitHub Issues][dadp]{:target="_blank"}, posted to the RubyGems project itself, raising precisely the same question I had been wondering about: how important is it to list development dependencies in the gem metadata?
 
 Here’s how it went down:
 
@@ -131,11 +131,11 @@ If you can make his point better than he can, odds are he will happily concede a
 
 On the rare occasion that you are invited to present your case, resist the temptation to address every single point your opponent has raised. It’s a self-perpetuating anti-pattern in communication; when a message takes this form, it invites responses to follow in kind. It sabotages communication in subtle ways: the spirit of cooperation is the first to go, followed shortly by organization, clarity, and succinctness.
 
-@e2 is an exemplary victim to this temptation. Communicating in this way, he logs over 8,000 words in just three days of discussion – that’s _15–20 pages in paperback form_. At one point, [@drbrain openly admits][tldr1],
+@e2 is an exemplary victim to this temptation. Communicating in this way, he logs over 8,000 words in just three days of discussion – that’s _15–20 pages in paperback form_. At one point, [@drbrain openly admits][tldr1]{:target="_blank"},
 
 > I've read and skimmed about a fifth of what you've written, I don't have the time or energy to read it all…
 
-On a different thread, [@mvz remarks][tldr2],
+On a different thread, [@mvz remarks][tldr2]{:target="_blank"},
 
 > @e2 your comment was indeed TL, so I DR it until now ;-).
 
@@ -161,7 +161,7 @@ If all that fails, you might be better off leaving well enough alone.
 ---
 
 [^1]:
-    Eric Steven Raymond discusses this contradiction in the [third section][ptpp] of his landmark essay, <cite>[Homesteading the Noosphere][htn]</cite> (2000).
+    Eric Steven Raymond discusses this contradiction in the [third section][ptpp] of his landmark essay, <cite>[Homesteading the Noosphere][htn]{:target="_blank"}</cite> (2000).
 
 [^2]:
     Daniel Dennett presents a variation on this point in <cite>Intuition Pumps and Other Tools for Thinking</cite> (2014), remarking that academic philosophers can sometimes wind up talking past each other,
