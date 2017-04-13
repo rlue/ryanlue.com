@@ -4,6 +4,8 @@ teaser: Find out the best practices, common pitfalls, and how it all fits togeth
 category: guides
 tags: [gems, workflow, foss]
 reddit_post: 'https://www.reddit.com/r/ruby/comments/61jlka/a_beginners_guide_to_publishing_a_gem_because_the/'
+featured_comments:
+  - url: 'https://www.reddit.com/r/ruby/comments/61jlka/a_beginners_guide_to_publishing_a_gem_because_the/dg69k9l/'
 ---
 
 Releasing a gem is easy-peasy:
