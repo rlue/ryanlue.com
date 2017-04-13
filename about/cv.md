@@ -15,8 +15,9 @@ TODO: Add Chinese version (research how to switch?)
   </a>
 
   <ul class="nameplate__contact">
-  <li><span class="nameplate__contact-list-marker">📞</span> <a href="690358839688B2%A3%let" class="nameplate__phone">938 853 096</a></li>
+    <li><span class="nameplate__contact-list-marker">🌏</span> <a href="http://ryanlue.com/" target="_blank" class="nameplate__blog">ryanlue.com</a></li>
     <li><span class="nameplate__contact-list-marker">🇹🇼</span> Taipei, Taiwan</li>
+    <li><span class="nameplate__contact-list-marker">📞</span> <a href="690358839688B2%A3%let" class="nameplate__phone">938 853 096</a></li>
     <li class="nameplate__pdf-link"><span class="nameplate__contact-list-marker">📄</span> <a href="Ryan%20Lue%20(CV).pdf">Download as PDF</a></li>
   </ul>
 </header>
@@ -29,7 +30,7 @@ Projects
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Solana][sol]:</span> A blog template for the Jekyll static site generator.
+  <span class="projects__name">[Solana][sol]{:target="_blank"}:</span> A blog template for the Jekyll static site generator.
 
   **Responsive layout** and **touch gestures** written in HTML, JavaScript, & CSS (Sass), **without Bootstrap or jQuery**. Features built-in protection against email harvesting bots.
 
@@ -38,15 +39,15 @@ Projects
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Something Like That][slt]:</span> A Ruby gem for comparing long, multi-word phrases.
+  <span class="projects__name">[Something Like That][slt]{:target="_blank"}:</span> A Ruby gem for comparing long, multi-word phrases.
 
-  Most fuzzy string matchers use algorithms best suited for comparing _individual terms._ This library uses the <dfn>Monge-Elkan method</dfn>, a two-step process designed specifically for _multi-word phrases:_ similarity scores are calculated for each possible word pairing, and then best matches are averaged together to produce a composite score ([Jimenez et al. 2009][mem]).
+  Most fuzzy string matchers use algorithms best suited for comparing _individual terms._ This library uses the <dfn>Monge-Elkan method</dfn>, a two-stage process designed specifically for _multi-word phrases_ ([Jimenez et al. 2009][mem]{:target="_blank"}).
   
-  Good for ranking search results collected from diverse sources.
+  Good for **ranking search results collected from diverse sources**.
 
 * <div class="projects__role projects__role--contributor">Contributor</div>
 
-  <span class="projects__name">[fuzzy\_match][fm]:</span> A Ruby gem for finding a needle in a haystack.
+  <span class="projects__name">[fuzzy\_match][fm]{:target="_blank"}:</span> A Ruby gem for finding a needle in a haystack.
 
   Originally measured string similarity using two separate algorithms – one for general use and another for edge cases. My contributions resolved edge cases without requiring a second algorithm, **reducing the overall complexity** of the library.
 
@@ -55,7 +56,7 @@ Projects
 
 * <div class="projects__role projects__role--contributor">Contributor</div>
 
-  <span class="projects__name">[Noisy][no]:</span> A Brownian noise generator for macOS.
+  <span class="projects__name">[Noisy][no]{:target="_blank"}:</span> A Brownian noise generator for macOS.
 
   Originally built with a windowed UI. My contributions converted the application to a menu bar widget, **reducing its footprint in the windowing system workspace**. (Completed in one day with no prior knowledge of macOS development, in pure Objective-C – _i.e.,_ without XCode’s Interface Builder.)
 
@@ -64,10 +65,8 @@ Skills
 
 * <span class="skills__list-marker">💬</span> Chinese fluency
 * <span class="skills__list-marker">💬</span> Technical communication  
-  <span class="skills__reference">See: [ryanlue.com][blog], [contributions to FOSS documentation][jkdoc]</span>
 * <span class="skills__list-marker">🖥️</span> Ruby / OOP
 * <span class="skills__list-marker">🖥️</span> UNIX shell scripting  
-  <span class="skills__reference">See: [timer][tm]</span>
 
 Work History
 ------------
@@ -76,23 +75,23 @@ Work History
 {: .work-history__position }
 
 * <div class="work-history__tenure">2015-2016</div>
-  [奇想生活 THAT! Inventions][that]
+  [奇想生活 THAT! Inventions][that]{:target="_blank"}
 
   * Crafted marketing language to support the brand identity of a boutique kitchenware maker.
   * Supported international distributors in adopting our ecommerce platform.
   * Translated critical sales presentations from Chinese into English.
   * Set up and monitored analytics for a [successful Kickstarter
-  campaign][freez].
+  campaign][freez]{:target="_blank"}.
 
 ### Academic Program Coordinator
 {: .work-history__position }
 
 * <div class="work-history__tenure">2011-2014</div>
-  [Trinity Scholar][trin]
+  [Trinity Scholar][trin]{:target="_blank"}
 
   * Developed a research-backed curriculum to prepare Taiwanese teenagers for college overseas.
   * Managed a team of senior educators to prepare day-by-day lesson plans for 36 separate units of instruction.
-  * Collaborated with Bay-Area startup [YadaZing][yada] to incorporate video entertainment into our language instruction program.
+  * Collaborated with Bay-Area startup [YadaZing][yada]{:target="_blank"} to incorporate video entertainment into our language instruction program.
 
 Education
 ---------
@@ -101,11 +100,11 @@ Education
 
 * <div class="education__date">2016</div>
 
-  [Agile Development Using Ruby on Rails][berk]
+  [Agile Development Using Ruby on Rails][berk]{:target="_blank"}
   <span class="education__institution">UC Berkeley, via edX</span>
 * <div class="education__date">2015</div>
 
-  [Introduction to Computer Networking][stan]
+  [Introduction to Computer Networking][stan]{:target="_blank"}
   <span class="education__institution">Stanford University, via Lagunita</span>
 
 ### Formal Degrees
@@ -152,9 +151,6 @@ Contact.patchButtons('nameplate__phone');
 [mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
 [fm]: https://github.com/seamusabshere/fuzzy_match/pull/24
 [no]: https://github.com/rlue/Noisy
-[blog]: http://ryanlue.com/
-[jkdoc]: https://github.com/jekyll/jekyll/pull/5912
-[tm]: https://github.com/rlue/timer
 [that]: https://thatinventions.com/
 [freez]: https://www.kickstarter.com/projects/that/freezthat-frozen-treats-in-a-flash
 [trin]: http://trinityscholar.com/

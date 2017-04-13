@@ -19,6 +19,10 @@ body {
   padding: 1rem;
   color: #333;
   line-height: 1.4;
+
+  @media print {
+    max-width: 45rem;
+  }
 }
 
 header {
@@ -36,7 +40,7 @@ a {
   text-decoration: none;
 
   color: hsl(134,63%,32%); border-bottom: 1px solid #d9d9d9;
-  &:visited { border-bottom-color: #fff; }
+  &:visited { color: #999; }
   &:hover   { border-bottom-color: hsl(134,63%,32%); }
   &:active  { color: #fff; background-color: hsl(134,63%,25%); }
 
@@ -47,6 +51,11 @@ a {
 
 li {
 margin-bottom: 0.5rem;
+}
+
+dfn {
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* # Objects
@@ -120,6 +129,10 @@ margin-bottom: 0.5rem;
   @media (max-width: 599px) {
     font-size: 8.013vw;
   }
+
+  @media print {
+    margin: 0;
+  }
 }
 
 .nameplate__contact {
@@ -127,35 +140,29 @@ margin-bottom: 0.5rem;
   padding: 0;
   text-align: right;
 
-  @media print, (max-width: 599px) {
+  > li {
+    margin-bottom: 0;
+
+    > a { border-bottom: none; }
+  }
+
+  @media print {
+    margin: 0;
+
+    > .nameplate__pdf-link {
+        display: none;
+    }
+  }
+
+  @media (max-width: 599px) {
+    text-align: center;
+
     > li {
       .nameplate__contact-list-marker {
         float: none;
         margin: 0;
       }
     }
-  }
-
-  @media print {
-    > li {
-      display: inline;
-
-      &.nameplate__pdf-link {
-        display: none;
-      }
-
-      &::before {
-        content: " / ";
-      }
-
-      &:first-child::before {
-        content: "";
-      }
-    }
-  }
-
-  @media (max-width: 599px) {
-    text-align: center;
   }
 }
 
@@ -167,19 +174,6 @@ margin-bottom: 0.5rem;
 .nameplate__phone {
   &::before {
     content: "+886 ";
-  }
-}
-
-#projects {
-  @media print {
-    &::after {
-      content: ' (more at https://github.com/rlue/)';
-      font-weight: normal;
-      font-size: 1rem;
-      font-style: italic;
-      float: right;
-      line-height: 2.1rem;
-    }
   }
 }
 
@@ -215,14 +209,6 @@ margin-bottom: 0.5rem;
       position: absolute;
       left: -2rem;
     }
-  }
-}
-
-.skills__reference {
-  font-style: italic;
-
-  @media print {
-    display: none;
   }
 }
 
