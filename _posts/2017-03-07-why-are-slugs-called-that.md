@@ -2,7 +2,7 @@
 title: Why Are “URL slugs” Called That?
 teaser: "(Spoiler: it’s newsroom lingo.)"
 category: til
-tags: [etymology, jekyll, seo]
+tags: [etymology, jekyll, usability]
 ---
 
 Slug? What’s a Slug?
