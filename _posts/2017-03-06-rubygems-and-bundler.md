@@ -34,3 +34,10 @@ The difference is that Bundler keeps track of which _versions_ of which gems you
 2. Developers tend to have more than one active project stored on any given computer, so if two projects happen to depend on different versions of the same library (as they invariably will), something’s going to break.  
 
 This means that if you’re using Bundler, you’re using both. And if you’re _not_ using Bundler, either you never have before (in which case you really should) or you know something I don’t (in which case I’d love for you to educate me about it).
+
+Update (13 April 2017)
+----------------------
+
+Turns out Noah Gibbs wrote [a _far_ more comprehensive treatment of this same topic][gibbs]{:target="_blank"} around roughly the same time. Give it a read if you’re ready for more.
+
+[gibbs]: https://appfolio-engineering.squarespace.com/appfolio-engineering/2017/2/27/ruby-rubygems-and-bundler
