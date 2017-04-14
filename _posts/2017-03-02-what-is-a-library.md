@@ -4,6 +4,8 @@ teaser: Almost simple enough for your mother to understand.
 category: programming-101
 tags: [gems]
 reddit_post: 'https://www.reddit.com/r/coding/comments/654gew/programming_101_what_is_a_library_and_why_would_i/'
+featured_comments:
+  - url: 'https://www.reddit.com/r/coding/comments/654gew/programming_101_what_is_a_library_and_why_would_i/dg7rcsb/'
 ---
 
 What is a Library?
