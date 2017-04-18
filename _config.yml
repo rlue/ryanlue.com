@@ -57,6 +57,8 @@ exclude:
   - LICENSE
   - README.md
   - TODO.md
+include:
+  - .well-known
 
 permalink: /:collection/:path
 
