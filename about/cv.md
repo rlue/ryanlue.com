@@ -49,7 +49,7 @@ Projects
 
   <span class="projects__name">[fuzzy\_match][fm]{:target="_blank"}:</span> A Ruby gem for finding a needle in a haystack.
 
-  Originally measured string similarity using two separate algorithms – one for general use and another for edge cases. My contributions resolved edge cases without requiring a second algorithm, **reducing the overall complexity** of the library.
+  Previously implemented a “fallback” algorithm used only in edge cases. My contributions adapted the main algorithm to handle the edge cases, **reducing overall complexity**.
 
 ### User Interface
 {: .projects__section }
@@ -58,15 +58,16 @@ Projects
 
   <span class="projects__name">[Noisy][no]{:target="_blank"}:</span> A Brownian noise generator for macOS.
 
-  Originally built with a windowed UI. My contributions converted the application to a menu bar widget, **reducing its footprint in the windowing system workspace**. (Completed in one day with no prior knowledge of macOS development, in pure Objective-C – _i.e.,_ without XCode’s Interface Builder.)
+  Originally built with a windowed UI. My contributions converted the application to a menu bar widget, **reducing its footprint in the windowing system workspace**. (Completed in one day with no prior knowledge of macOS development, in pure Objective-C)
 
 Skills
 ------
 
-* <span class="skills__list-marker">💬</span> Chinese fluency
 * <span class="skills__list-marker">💬</span> Technical communication  
-* <span class="skills__list-marker">🖥️</span> Ruby / OOP
-* <span class="skills__list-marker">🖥️</span> UNIX shell scripting  
+* <span class="skills__list-marker">🖥️</span> Ruby / Object-Oriented Programming
+* <span class="skills__list-marker">🖥️</span> HTML / CSS / JavaScript
+* <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
+* <span class="skills__list-marker">🖥️</span> Git
 
 Work History
 ------------

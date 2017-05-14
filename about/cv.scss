@@ -177,6 +177,16 @@ dfn {
   }
 }
 
+#projects::after {
+  @media print {
+    content: ' more at github.com/rlue';
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.8em;
+    float: right;
+  }
+}
+
 .projects__section + ul {
   @extend %featured_list;
 }
