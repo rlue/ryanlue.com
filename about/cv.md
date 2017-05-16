@@ -51,14 +51,14 @@ Projects
 
   Previously implemented a “fallback” algorithm used only in edge cases. My contributions adapted the main algorithm to handle the edge cases, **reducing overall complexity**.
 
-### User Interface
+### Command Line Utilities
 {: .projects__section }
 
-* <div class="projects__role projects__role--contributor">Contributor</div>
+* <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Noisy][no]{:target="_blank"}:</span> A Brownian noise generator for macOS.
+  <span class="projects__name">[Little Red Flag][lrf]{:target="_blank"}:</span> A daemon for monitoring mailboxes.
 
-  Originally built with a windowed UI. My contributions converted the application to a menu bar widget, **reducing its footprint in the windowing system workspace**. (Completed in one day with no prior knowledge of macOS development, in pure Objective-C)
+  Watches local and remote mailboxes for changes, then triggers an external program to sync. Utilizes threading to simultaneously manage multiple listeners. Provides smart detection of available mail utilities, and parses their respective config files.
 
 Skills
 ------
@@ -151,7 +151,7 @@ Contact.patchButtons('nameplate__phone');
 [slt]: https://github.com/rlue/something_like_that
 [mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
 [fm]: https://github.com/seamusabshere/fuzzy_match/pull/24
-[no]: https://github.com/rlue/Noisy
+[lrf]: https://github.com/rlue/little_red_flag
 [that]: https://thatinventions.com/
 [freez]: https://www.kickstarter.com/projects/that/freezthat-frozen-treats-in-a-flash
 [trin]: http://trinityscholar.com/
