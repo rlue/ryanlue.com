@@ -64,7 +64,7 @@ Skills
 ------
 
 * <span class="skills__list-marker">💬</span> Technical communication  
-* <span class="skills__list-marker">🖥️</span> Ruby / Object-Oriented Programming
+* <span class="skills__list-marker">🖥️</span> Ruby / Rails / RSpec
 * <span class="skills__list-marker">🖥️</span> HTML / CSS / JavaScript
 * <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
 * <span class="skills__list-marker">🖥️</span> Git
