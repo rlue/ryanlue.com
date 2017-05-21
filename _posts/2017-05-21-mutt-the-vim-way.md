@@ -3,6 +3,7 @@ title: Mutt, the Vim Way
 teaser: Mutt has a learning curve. Here are some settings to help vim users feel right at home.
 category: tips
 tags: [mutt, vim, bashrc]
+reddit_post: 'https://www.reddit.com/r/linux/comments/6cgq3d/my_vimlike_keybindings_for_mutt/'
 ---
 
 I’ve recently made the switch to managing my email from the terminal, and settled on mutt as my client of choice. Luckily, it’s well-documented, but like any fully-featured terminal utility, it still takes some time to find your way around. Below are the customizations I’ve made to my `muttrc` to make things as ‘vimmy’ as possible.
