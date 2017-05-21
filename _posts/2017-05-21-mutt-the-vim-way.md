@@ -88,13 +88,14 @@ This configuration overrides some default bindings, and it may behoove you to kn
     bind generic,index,pager \Cf       next-page
     bind generic,index,pager \Cb       previous-page
 
-* `^F` » `forget-passphrase`
+* By default, `^F` is bound to `forget-passphrase`.
 
-  **Unlikely to be used** (only needed when accessing a remote POP/IMAP server directly; it’s advisable to keep a local mirror of your mailstore with a tool like mbsync or OfflineIMAP instead).
+  This default binding is **unlikely to be used** (it’s only needed when accessing a remote POP/IMAP server directly, which is less common than managing a local mirror of your mailstore, synced with a tool like mbsync or OfflineIMAP).
 
-* `^B` » `call urlview to extract URLs out of a message`
+* By default, `^B` is bound to `call urlview to extract URLs out of a
+message` (_i.e.,_ visit links).
 
-  **Remapped** to `gx` (this is how you visit links in mutt).
+  This configuration **remaps** this function to `gx`.
 
 ^
 
@@ -103,22 +104,22 @@ This configuration overrides some default bindings, and it may behoove you to kn
     bind pager               gg        top
     bind pager               G         bottom
 
-* `g` » `group-reply`
+* By default, `g` is bound to `group-reply` (_i.e.,_ reply-all).
 
-  **Remapped** to `a` (à la Gmail).
+  This configuration **remaps** this function to `a` (à la Gmail).
 
-* `G` » `fetch-mail` (index) / unmapped (pager)
+* By default, `G` is bound to `fetch-mail`.
 
-  **Unlikely to be used** (retrieves mail from a POP server; see above).
+  This default binding is **unlikely to be used** (it retrieves mail from a POP server; see above).
 
 ^
 
     bind generic,pager       \Cy       previous-line
     bind generic,index,pager \Ce       next-line
 
-* `^Y` » unmapped
+* By default, `^Y` is not bound.
 
-  N.b., `^Y` is normally [intercepted by the terminal as a DSUSP signal][ctrly]. In order to enable this keybinding in mutt, DSUSP must be disabled in the terminal. To do this, add the function definition below to your `.bashrc`:
+  `^Y` is normally [intercepted by the terminal as a DSUSP signal][ctrly]. In order to enable this keybinding in mutt, DSUSP must be disabled in the terminal. To do this, add the function definition below to your `.bashrc`:
 
       mutt()
       {
@@ -129,22 +130,22 @@ This configuration overrides some default bindings, and it may behoove you to kn
         stty $old                                    # Restore termios on exit
       }
 
-* `^E` » `edit-type`
+* By default, `^E` is bound to `edit-type`.
 
-  **Unlikely to be used** (for manually editing the MIME type of an email attachment).
+  This default binding is **unlikely to be used** (it’s for manually editing the MIME type of an email attachment).
 
 ^
 
     bind generic,index,pager \Cd       half-down
     bind generic,index,pager \Cu       half-up
 
-* `^D` » `delete-thread`
+* By default, `^D` is bound to `delete-thread`.
 
-  **Remapped** to `dat` (for “delete a thread”).
+  This configuration **remaps** this function to `dat` (for “delete a thread”).
 
-* `^U` » `undelete-thread`
+* By default, `^U` is bound to `undelete-thread`.
 
-  **Rendered superfluous** by this configuration. (By default, “deleting” a message in mutt only _flags it for deletion;_ until changes are registered with `$`/`sync-mailbox`, the actual mailstore remains unaffected, and messages may still be “undeleted”. Once changes are registered, flagged messages are moved to a trash folder if the [`trash` configuration variable][trash] is set, or irrecoverably purged if not. This configuration alters the default behavior to register changes automatically, and relies on the user to set the `trash` variable if she wishes to retain the option to recover deleted messages.)
+  This default binding is **rendered superfluous** by this configuration. (By default, “deleting” a message in mutt only _flags it for deletion;_ until changes are registered with `$`/`sync-mailbox`, the actual mailstore remains unaffected, and messages may still be “undeleted”. Once changes are registered, flagged messages are either moved to a trash folder if the [`trash` configuration variable][trash] is set, or irrecoverably purged if not. This configuration alters the default behavior and registers such changes automatically, relying on the user to set the `trash` variable if she wishes to retain the option to recover deleted messages.)
 
 ^
 
@@ -154,21 +155,21 @@ This configuration overrides some default bindings, and it may behoove you to kn
     bind index               za        collapse-thread
     bind index               zA        collapse-all
 
-* `z` » unmapped
+* By default, `z` is unbound (this setting does not conflict with any default key bindings).
 
 ^
 
     bind index,pager         N         search-opposite
 
-* `N` » `toggle-new`
+* By default, `N` is bound to `toggle-new`.
 
-  **Redundant** with `wn`
+  This default binding is **redundant**; the function can also be executed with `wn`.
     
 ^
 
     bind index               <Backtab> previous-new-then-unread
     
-* `<Backtab>` » unmapped
+* By default, `<Backtab>` is unbound (this setting does not conflict with any default key bindings).
 
 ### Actions / Command Line
 
