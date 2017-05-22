@@ -174,8 +174,9 @@ message` (_i.e.,_ visit links).
 
 ### Actions / Command Line
 
-The remaining sections have no conflicts with default key bindings, though the very long macros deserve some explanation, which will be covered in a future post.
+The remaining sections have no conflicts with default key bindings, though the very long macros deserve some explanation — [see this post for more][autosync].
     
 [func]: http://www.mutt.org/doc/manual/#functions
 [ctrly]: https://www.mail-archive.com/mutt-dev@mutt.org/msg10141.html
 [trash]: http://www.mutt.org/doc/manual/#trash
+[autosync]: {% post_url 2017-05-22-autosync-mutt %}
