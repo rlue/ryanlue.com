@@ -46,7 +46,7 @@ To automate the `sync-mailbox` function, you have to manually remap each CRUD op
 This is simple when you just want to `delete-message`,
 
 ```
-macro index,pager    d   "<delete-message><sync-mailbox>"                                 "move message to trash"
+macro index,pager d "<delete-message><sync-mailbox>" "move message to trash"
 ```
 
 but moving messages and saving copies to different folders is tricky: you want to press the keybinding, then manually select a folder, then have it sync. But as described by OP above, there’s no facility in mutt keybindings that says “wait until the user is done selecting a folder.”
