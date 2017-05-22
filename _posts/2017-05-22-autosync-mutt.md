@@ -3,6 +3,7 @@ title: save-message → sync-mailbox Automatically in Mutt
 teaser: Making mutt sync the mailbox on its own is messier than it should have to be — but it can be done.
 category: tips
 tags: [mutt]
+reddit_post: 'https://www.reddit.com/r/linux/comments/6cl0pv/how_to_make_mutt_syncmailbox_automatically_after/'
 ---
 
 This question was first raised [on the mutt-users@mutt.org mailing list back in 2008][op]:
