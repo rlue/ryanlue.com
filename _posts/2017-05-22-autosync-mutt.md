@@ -63,15 +63,15 @@ This is starting to get messy, so let’s break it down and see what’s really 
 
 1. `macro index s "..." "save message to a mailbox"`
 
-Bind `s` to a macro that...
+   Bind `s` to a macro that...
 
 2. `:macro browser <Return> "..."<Return><save-message>?`
 
-...brings up the `save-message` folder selection menu, just after binding `<Return>` to a macro that...
+   ...brings up the `save-message` folder selection menu, just after binding `<Return>` to a macro that...
 
 3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>`
 
-...selects a folder to save, syncs the mailbox, and finally restores `<Return>` to its original binding.
+   ...selects a folder to save, syncs the mailbox, and finally restores `<Return>` to its original binding.
 
 ^
 
@@ -89,19 +89,19 @@ Let’s break this down again.
 
 1. `macro index s "..." "save message to a mailbox"`
 
-Bind `s` to a macro that...
+   Bind `s` to a macro that...
 
 2. `:macro browser <Return> "..."<Return>:macro browser q "..."<Return><save-message>?`
 
-...brings up the `save-message` folder selection menu, just after binding `<Return>` and `q` to two separate macros...
+   ...brings up the `save-message` folder selection menu, just after binding `<Return>` and `q` to two separate macros...
 
 3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
 
-...the first of which selects a folder to save, syncs the mailbox, and finally restores `<Return>` and `q` to their original bindings...
+   ...the first of which selects a folder to save, syncs the mailbox, and finally restores `<Return>` and `q` to their original bindings...
 
 4. `<exit>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
 
-...while the other exits and cleans up likewise.
+   ...while the other exits and cleans up likewise.
 
 ^
 
