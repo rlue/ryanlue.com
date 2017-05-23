@@ -61,17 +61,17 @@ macro index s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind brow
 
 This is starting to get messy, so let’s break it down and see what’s really happening. In the lines below, all backslash-escaping has been removed, and each nested macro has been extracted into the subsequent line.
 
-1. `macro index s "..." "save message to a mailbox"`
+1. Bind `s` to a macro that…
 
-   Bind `s` to a macro that...
+       macro index s "…" "save message to a mailbox"
 
-2. `:macro browser <Return> "..."<Return><save-message>?`
+2. …brings up the `save-message` folder selection menu, just after binding `<Return>` to a macro that…
 
-   ...brings up the `save-message` folder selection menu, just after binding `<Return>` to a macro that...
+       :macro browser <Return> "…"<Return><save-message>?
 
-3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>`
+3. …selects a folder to save, syncs the mailbox, and finally restores `<Return>` to its original binding.
 
-   ...selects a folder to save, syncs the mailbox, and finally restores `<Return>` to its original binding.
+       <select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>
 
 ^
 
@@ -87,21 +87,21 @@ macro index s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind brow
 
 Let’s break this down again.
 
-1. `macro index s "..." "save message to a mailbox"`
+1. Bind `s` to a macro that…
 
-   Bind `s` to a macro that...
+       macro index s "…" "save message to a mailbox"
 
-2. `:macro browser <Return> "..."<Return>:macro browser q "..."<Return><save-message>?`
+2. …brings up the `save-message` folder selection menu, just after binding `<Return>` and `q` to two separate macros…
 
-   ...brings up the `save-message` folder selection menu, just after binding `<Return>` and `q` to two separate macros...
+       :macro browser <Return> "…"<Return>:macro browser q "…"<Return><save-message>?
 
-3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
+3. …the first of which selects a folder to save, syncs the mailbox, and finally restores `<Return>` and `q` to their original bindings…
 
-   ...the first of which selects a folder to save, syncs the mailbox, and finally restores `<Return>` and `q` to their original bindings...
+       <select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>
 
-4. `<exit>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
+4. …while the other exits and cleans up likewise.
 
-   ...while the other exits and cleans up likewise.
+       <exit>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>
 
 ^
 
@@ -110,19 +110,19 @@ The Final Configuration
 
 I have my own `muttrc` [set up to be as ‘vimmy’ as possible][vimmy], so the macros described above are actually bound to `dd` and `ss`, with `dat` and `sat` set up to “delete a thread” and “save a thread,” respectively.
 
+Also worth noting is the inclusion of threadwise saving and copying. No such function is built into mutt, so these mappings automate `tag-thread` + `save-message` (even in pager view, where `tag-thread` is not available).
+
 ```
 macro index,pager    dd  "<delete-message><sync-mailbox>"                                 "move message to trash"
 macro index,pager    dat "<delete-thread><sync-mailbox>"                                  "move thread to trash"
-macro index          ss  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<save-message>?"                                                                                             "save message to a mailbox"
-macro index          sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<untag-pattern>.<enter><tag-thread><tag-prefix-cond><save-message>?"                                         "save thread to a mailbox"
-macro index          \;s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><save-message>?"                                                                            "save tagged messages to a mailbox"
-macro pager          ss  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015<save-message>?"                                                           "save message to a mailbox"
-macro pager          sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015<exit><untag-pattern>.<enter><tag-thread><tag-prefix-cond><save-message>?" "save thread to a mailbox"
-macro index          cc  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<copy-message>?"                                                                                             "copy message to a mailbox"
-macro index          cat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<untag-pattern>.<enter><tag-thread><tag-prefix-cond><copy-message>?"                                         "copy thread to a mailbox"
-macro index          \;c ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><copy-message>?"                                                                            "copy tagged messages to a mailbox"
-macro pager          cc  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015<copy-message>?"                                                           "copy message to a mailbox"
-macro pager          cat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015<exit><untag-pattern>.<enter><tag-thread><tag-prefix-cond><copy-message>?" "copy thread to a mailbox"
+macro index,pager    ss  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<save-message>?"                                                                                                                                     "save message to a mailbox"
+macro index          sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015\"\015<mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix-cond><save-message>?"                                    "save thread to a mailbox"
+macro index          \;s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><save-message>?"                                                                                                                    "save tagged messages to a mailbox"
+macro pager          sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015<display-message>\"\015<exit><mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix><save-message>?" "save thread to a mailbox"
+macro index,pager    cc  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<copy-message>?"                                                                                                                                     "copy message to a mailbox"
+macro index          cat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015\"\015<mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix-cond><copy-message>?"                                    "copy thread to a mailbox"
+macro index          \;c ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><copy-message>?"                                                                                                                    "copy tagged messages to a mailbox"
+macro pager          cat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015<display-message>\"\015<exit><mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix><copy-message>?" "copy thread to a mailbox"
 ```
 
 And this is why sometimes I wish I had a different hobby.
