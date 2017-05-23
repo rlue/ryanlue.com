@@ -59,11 +59,21 @@ So instead, what you have to do is this:
 macro index s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015\"\015<save-message>?" "save message to a mailbox"
 ```
 
-This macro does the following:
+This is starting to get messy, so let’s break it down and see what’s really happening. In the lines below, all backslash-escaping has been removed, and each nested macro has been extracted into the subsequent line.
 
-1. Create a new macro (in preparation for the folder selection menu) to make `<Return>` (`\015`) select a folder and then sync the mailbox.
-2. But also, after selecting a folder and syncing the mailbox, make sure the macro “cleans up” after itself, resetting `<Return>` to its original keybinding.
-3. Then, enter the `save-message` folder selection menu.
+1. `macro index s "..." "save message to a mailbox"`
+
+Bind `s` to a macro that...
+
+2. `:macro browser <Return> "..."<Return><save-message>?`
+
+...brings up the `save-message` folder selection menu, just after binding `<Return>` to a macro that...
+
+3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>`
+
+...selects a folder to save, syncs the mailbox, and finally restores `<Return>` to its original binding.
+
+^
 
 This solves our problem, but creates a new one: if you go to save a message and then change your mind, you can exit the folder selection menu by pressing `q`. Only now, the macro hasn’t had a chance to clean up after itself (as in Step 2 above); `<Return>` is still mapped to a macro that will `select-entry`, `sync-mailbox`, and then restore `<Return>` to its original binding.
 
@@ -75,7 +85,25 @@ To fix this, we have to incorporate yet another macro definition into our alread
 macro index s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<save-message>?" "save message to a mailbox"
 ```
 
-Now, when you hit `s`, you will enter the `save-mailbox` folder selection menu. `<Return>` will be bound to a macro that chooses the folder, syncs the mailbox, and restores both `<Return>` and `q` to their original bindings. At the same time, `q` will be bound to a macro that exits before cleaning up similarly.
+Let’s break this down again.
+
+1. `macro index s "..." "save message to a mailbox"`
+
+Bind `s` to a macro that...
+
+2. `:macro browser <Return> "..."<Return>:macro browser q "..."<Return><save-message>?`
+
+...brings up the `save-message` folder selection menu, just after binding `<Return>` and `q` to two separate macros...
+
+3. `<select-entry><sync-mailbox>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
+
+...the first of which selects a folder to save, syncs the mailbox, and finally restores `<Return>` and `q` to their original bindings...
+
+4. `<exit>:bind browser <Return> select-entry<Return>:bind browser q exit<Return>`
+
+...while the other exits and cleans up likewise.
+
+^
 
 The Final Configuration
 -----------------------
