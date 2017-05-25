@@ -85,9 +85,9 @@ When you install Pry, it comes with a few dependencies (coderay, method\_source,
 
 If you’ve seen the [listing for Pry on RubyGems][pry]{:target="_blank"}, you’ll notice that a lot of this information looks familiar. In fact, each listing on RubyGems is automatically generated from this metadata file – there is no way for developers to manually edit a gem’s listing through the website.
 
-That means that before you can package a gem (Step 3 above), you must compile all of this information into a metadata file of your own (Step 1 above). (If you’re sweating over the length of the file you’re looking at now, relax – the gemspec file it was generated from is only 18 lines long.)
+That means that before you can package a gem (Step 3 above), you must compile all of this information into a metadata file of your own (Step 1 above). If you’re sweating over the length of the file you’re looking at now, relax: you don’t write the `metadata.gz` file by hand. Instead, it’s automatically generated from a shorter, simpler file called a gemspec. Pry’s gemspec is only 18 lines long.
 
-Note that this file is not included in the library that ultimately gets installed on your system (hence our use of `gem fetch` and not `gem install` for this section). The information inside is extracted for use by the `gem` command (and the gem host, RubyGems.org), but is not a part of the library itself.
+Note that this file is extraneous to the library itself. It is not included in what gets installed on your system; rather, it’s a profile of _information about the library,_ without which RubyGems couldn’t do its job. Library + metadata = package.
 
 ### Data (or, the library itself)
 
