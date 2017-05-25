@@ -6,7 +6,7 @@ tags: [mutt]
 reddit_post: 'https://www.reddit.com/r/linux/comments/6cl0pv/how_to_make_mutt_syncmailbox_automatically_after/'
 ---
 
-This question was first raised [on the mutt-users@mutt.org mailing list back in 2008][op]:
+This question was first raised [on the mutt-users@mutt.org mailing list back in 2008][op]{:target="_blank"}:
 
 > Hello
 > 
