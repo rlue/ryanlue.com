@@ -65,6 +65,24 @@ When you install Pry, it comes with a few dependencies (coderay, method\_source,
 
     $ zless metadata.gz
 
+    --- !ruby/object:Gem::Specification
+    name: pry
+    version: !ruby/object:Gem::Version
+      version: 0.10.4
+    platform: ruby
+    authors:
+    - John Mair (banisterfiend)
+    - Conrad Irwin
+    - Ryan Fitzgerald
+    autorequire:
+    bindir: bin
+    cert_chain: []
+    date: 2016-07-11 00:00:00.000000000 Z
+    dependencies:
+    - !ruby/object:Gem::Dependency
+      name: coderay
+    ...
+
 If you’ve seen the [listing for Pry on RubyGems][pry]{:target="_blank"}, you’ll notice that a lot of this information looks familiar. In fact, each listing on RubyGems is automatically generated from this metadata file – there is no way for developers to manually edit a gem’s listing through the website.
 
 That means that before you can package a gem (Step 3 above), you must compile all of this information into a metadata file of your own (Step 1 above). (If you’re sweating over the length of the file you’re looking at now, relax – the gemspec file it was generated from is only 18 lines long.)
