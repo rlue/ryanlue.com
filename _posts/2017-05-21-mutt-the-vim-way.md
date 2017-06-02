@@ -120,7 +120,7 @@ message` (_i.e.,_ visit links).
 
 * By default, `^Y` is not bound.
 
-  `^Y` is normally [intercepted by the terminal as a DSUSP signal][ctrly]. In order to enable this keybinding in mutt, DSUSP must be disabled in the terminal. To do this, add the function definition below to your `.bashrc`:
+  `^Y` is normally [intercepted by the terminal as a DSUSP signal][ctrly]{:target="_blank"}. In order to enable this keybinding in mutt, DSUSP must be disabled in the terminal. To do this, add the function definition below to your `.bashrc`:
 
       mutt()
       {
@@ -146,7 +146,7 @@ message` (_i.e.,_ visit links).
 
 * By default, `^U` is bound to `undelete-thread`.
 
-  This default binding is **rendered superfluous** by this configuration. (By default, “deleting” a message in mutt only _flags it for deletion;_ until changes are registered with `$`/`sync-mailbox`, the actual mailstore remains unaffected, and messages may still be “undeleted”. Once changes are registered, flagged messages are either moved to a trash folder if the [`trash` configuration variable][trash] is set, or irrecoverably purged if not. This configuration alters the default behavior and registers such changes automatically, relying on the user to set the `trash` variable if she wishes to retain the option to recover deleted messages.)
+  This default binding is **rendered superfluous** by this configuration. (By default, “deleting” a message in mutt only _flags it for deletion;_ until changes are registered with `$`/`sync-mailbox`, the actual mailstore remains unaffected, and messages may still be “undeleted”. Once changes are registered, flagged messages are either moved to a trash folder if the [`trash` configuration variable][trash]{:target="_blank"} is set, or irrecoverably purged if not. This configuration alters the default behavior and registers such changes automatically, relying on the user to set the `trash` variable if she wishes to retain the option to recover deleted messages.)
 
 ^
 
