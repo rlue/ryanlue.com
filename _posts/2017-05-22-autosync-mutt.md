@@ -1,5 +1,5 @@
 ---
-title: save-message → sync-mailbox Automatically in Mutt
+title: save-message → sync-mailbox Automatically in Mutt
 teaser: Making mutt sync the mailbox on its own is messier than it should have to be — but it can be done.
 category: tips
 tags: [mutt]
