@@ -23,21 +23,25 @@ The next section explores the _relevance_ of such spam prevention measures; for 
 Analysis
 --------
 
-### Does it work?
+### Does it actually stop spam bots?
 
 Probably. I don’t write these bots, but if I did, I’d definitely go for the low-hanging fruit and not worry too much about building some very sophisticated regular expression to catch outliers. These guys deal in _millions_ of emails, so a single address can only be worth so much. Sifting through all the outliers couldn’t possibly be worth the effort.
 
-(It’s probably [totally unnecessary for phone numbers][phn]{:target="_blank"}, though.)
+(And when it comes to phone numbers, [it’s probably totally unnecessary][phn]{:target="_blank"}.)
 
-### Does it matter?
+### Does it actually stop spam?
 
 I really don’t know. Spammers certainly have other ways of getting email addresses, too. Unless you know what all those other ways are and have a plan to protect against them (I sure don’t), the benefit is probably negligible.
 
-Of course, as a developer, it’s my responsibility to be a good steward of users’ personal data _even if they themselves are not,_ so if I were to build an app that gave users the option to have their email addresses exposed publicly, I would _never_ pass the buck on this one. In practice, there might not be a single good business reason to devote resources to this problem (I mean, who’s going to figure out that _your site_ is the reason they started getting more spam, if they even did at all? and what are the odds you’d actually lose users over it?). But on principle, it’s _someone’s_ responsibility to understand the nuances of this problem, and that person is not your users.
+### So isn’t this a job for a spam filter?
 
-### Seriously? Who even deals with spam anymore?
+As a user, most definitely. Spam filters are very effective when configured properly.
 
-Again, I don’t know. _I_ sure don’t. While I do still receive about three spam messages a day, it’s a vanishingly rare occurrence that one will make it past Gmail’s spam filter. Then again, I’m not the average user, and if you’re reading this blog, neither are you.
+As a developer, however, it’s my responsibility to be a good steward of users’ personal data _even if they themselves are not,_ so if I were to build an app that gave users the option to have their email addresses exposed publicly, I would _never_ pass the buck on this one. In practice, there might not be a single good business reason to devote resources to this problem. (I mean, who’s going to figure out that _your site_ is the reason they started getting more spam, if they even did at all? and what are the odds you’d actually lose users over it?)
+
+But on principle, it’s _someone’s_ responsibility to understand the nuances of this problem, and that person is not your users.
+
+### Seriously, how are we still talking about spam in 2017?
 
 As seldom as it pops up on our collective radar, the fight against spam is real and ongoing. The U.S. Department of Justice made headlines just today after [taking down a major botnet][kel]{:target="_blank"}:
 
@@ -58,7 +62,7 @@ So on the one hand, I hardly ever see spam anymore. On the other, that’s proba
 
 Even if you believe that the existing infrastructure is good enough and that it’s totally paranoid to do anything more about it, some of your users are probably a little paranoid, and it’s not unwise to appease them with a little superfluous security.
 
-### ...Fine. But does it have to be so ugly?
+### …Fine. But does it have to be so ugly?
 
 The clumsy workarounds described above would be acceptable if you were selling a bike on Craigslist in the early aughts, but it’s hardly befitting of a web developer in 2017. There are better ways, but how much work are they going to take?
 
@@ -77,13 +81,13 @@ Obfuscating email addresses is the simplest, in addition to being virtually unno
 
 #### In plain HTML
 
-[This is how CloudFlare][cf]{:target="_blank"} and GitHub do it (among others): in HTML, every ASCII character can be represented by an <dfn><a href="http://www.freeformatter.com/html-entities.html" target="_blank">entity code</a></dfn> (for instance, “a” is `&#97;`, or `&#x61;` in hexadecimal). If you place this entity code directly into an HTML file, a browser will render the character it represents. Thus, you can create the following link:
-
-> <a href="mailto:&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;">&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;</a>
-
-using the following markup:
+[This is how CloudFlare][cf]{:target="_blank"} and GitHub do it. In HTML, every ASCII character can be represented by an <dfn><a href="http://www.freeformatter.com/html-entities.html" target="_blank">entity code</a></dfn>: for instance, “a” is `&#97;` (or `&#x61;` in hexadecimal). If you place this entity code directly into an HTML file, a browser will render the character it represents. Thus, the following markup:
 
     <a href="mailto:&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;">&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;</a>
+
+will be rendered as:
+
+> <a href="mailto:&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;">&#x70;&#x61;&#x6D;&#x65;&#x6C;&#x61;&#x40;&#x62;&#x61;&#x79;&#x77;&#x61;&#x74;&#x63;&#x68;&#x2E;&#x6F;&#x72;&#x67;</a>
 
 The problem is that it’d be trivial for a bot to convert all HTML entities before running an email regex on the page. I can’t speak to how often bots are designed to do this, nor to why high-profile, high-traffic sites rely on this method, but in theory, it’s not all that much better than nothing.
 
@@ -91,7 +95,7 @@ If I had to venture a guess, I’d say it’s because it’s simply not worth th
 
 #### With the help of JavaScript
 
-But if you’re small fries, you can get by with a half-baked solution, like the one I use on this site. Since it’s a Jekyll blog, I’ve opted to obfuscate my email address programmatically using Liquid:
+But if you’re small fries, you can get by with a half-baked solution, like the one I use on this site. Since it’s built with the Jekyll static site generator, I’ve opted to obfuscate my email address programmatically using Jekyll’s [Liquid templating language][lq]:
 
 ```liquid
 {% raw %}{% assign plain_link = 'mailto:' | append: site.contact %}
@@ -99,7 +103,7 @@ But if you’re small fries, you can get by with a half-baked solution, like the
 <a class="email" href="{{ obfuscated_link }}">Contact</a>{% endraw %}
 ```
 
-Thus, a link to `mailto:pamela@baywatch.org` becomes `gro.hctawyab04%alemapA3%otliam`, which gets corrected at load time with the following JavaScript:
+Thus, a link to `mailto:pamela@baywatch.org` gets garbled into `gro.hctawyab04%alemapA3%otliam` in the final HTML file, and is corrected in-browser at load time with the following JavaScript:
 
 ```javascript
 var Contact = {};
@@ -123,11 +127,11 @@ Contact.patchButtons = function(klass) {
 Contact.patchButtons('email');
 ```
 
-This solution provides [security through obscurity][sto]{:target="_blank"}, which is fine for a Joe Blow like me to use in a low-stakes scenario like this, but would be totally bogus for a large-scale company when their users’ personal information is on the line. If you want actual security, use a CAPTCHA.
+This solution provides [security through obscurity][sto]{:target="_blank"}, which is fine for a Joe Blow like me to use in a low-stakes scenario like this, but would be totally bogus for a large-scale company when their users’ personal information is on the line.
 
 ### Options 2 & 3: If you actually care about security
 
-...and if you really want your users to know you’re doing something about it, CAPTCHAs and relays are probably your best bet.
+…and if you really want your users to know you’re doing something about it, do like Craigslist and use CAPTCHAs and relays.
 
 [sto]: https://en.wikipedia.org/wiki/Security_through_obscurity
 [phn]: https://security.stackexchange.com/a/26316
@@ -136,3 +140,4 @@ This solution provides [security through obscurity][sto]{:target="_blank"}, whic
 [cl]: https://www.craigslist.org/about/help/email-relay
 [cf]: https://security.stackexchange.com/a/116360
 [tldr]: #alternatives
+[lq]: https://jekyllrb.com/docs/templates/
