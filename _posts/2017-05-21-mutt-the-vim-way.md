@@ -24,6 +24,13 @@ Or at least, the part that makes it vimmy:
 # Navigation
 # ----------------------------------------------------
 
+bind generic             z         noop
+bind index,pager,attach  g         noop
+bind index,pager         d         noop
+bind index,pager         s         noop
+bind index,pager         c         noop
+bind generic,pager       t         noop
+
 bind generic,index,pager \Cf       next-page
 bind generic,index,pager \Cb       previous-page
 bind generic             gg        first-entry
