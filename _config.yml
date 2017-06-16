@@ -30,6 +30,11 @@ nav_menu:
     icon: /i/icons.svg#email
 
 projects:
+  - title: Getting Things Down
+    teaser: Outlining and TODO shortcuts for GTD in plain ol' Markdown.
+    url: https://github.com/rlue/vim-getting-things-down
+    role: Creator
+    category: Vim Plugin
   - title: Solana
     teaser: The theme for this site. A responsive template written in vanilla Sass and JavaScript.
     url: https://github.com/rlue/jekyll-solana
