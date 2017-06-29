@@ -56,7 +56,7 @@ The Players
 
   Comes bundled with OpenSSH. Its job is to cache SSH key passwords for the duration of the current login session. (That is, you can set a passphrase on your SSH key for extra security. You’ll be prompted for this passphrase the first time you log in, and if ssh-agent is running, you can use the same key to log into other servers, or log out and back in again, without needing the password.)
 
-  GnuPG implements the ssh-agent protocol on its own ([and has since at least 2005][ssh-agent]{:target="_blank"}); ssh-agent is _not_ required for this to work. In fact, better safe than sorry: make sure ssh-agent is _not_ running with `ps x | grep [s]sh-agent` If it is running, check your login scripts for a line containing `eval "$(ssh-agent)"` or similar.
+  GnuPG provides its own utility as a stand-in for ssh-agent ([and has since at least 2005][ssh-agent]{:target="_blank"}), which means **ssh-agent is _not_ required for this to work**. In fact, better safe than sorry: make sure ssh-agent is _not_ running (`ps x | grep [s]sh-agent`). If it is, kill it (`ssh-agent -k`, or `killall ssh-agent` if that doesn’t work). To make sure it stays dead, check your login scripts for a line containing `eval "$(ssh-agent)"` or similar and remove them.
 
 * `gpg`
 
