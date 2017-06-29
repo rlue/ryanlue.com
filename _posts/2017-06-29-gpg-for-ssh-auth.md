@@ -5,7 +5,7 @@ category: guides
 tags: [ssh, pgp, cli, mac]
 reddit_post: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/'
 featured_comments:
-  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk6vr2/'
+  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk8fbu/'
     context: true
   - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk73ro/'
 ---
