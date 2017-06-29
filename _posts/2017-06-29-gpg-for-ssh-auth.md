@@ -3,6 +3,7 @@ title: Using a GPG key for SSH Authentication
 teaser: One less private key to keep track of.
 category: guides
 tags: [ssh, pgp, cli, mac]
+reddit_post: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/'
 ---
 
 PGP keys and SSH keys are different. It took me longer than I care to admit to understand this, given that the [first StackExchange thread I found on the subject][interch]{:target="_blank"} made it pretty clear that it’s not trivial to use one where you’re supposed to use the other.
