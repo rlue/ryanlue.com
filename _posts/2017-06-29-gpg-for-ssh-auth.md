@@ -111,7 +111,7 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
        # ~/.gnupg/gpg-agent.conf
        enable-ssh-support
 
-4. Initialize `SSH_AUTH_SOCK` and [launch gpg-agent][new]{:target="_blank"} on login:
+4. [Initialize `SSH_AUTH_SOCK` and launch gpg-agent on login][new]{:target="_blank"}:
 
        # ~/.bash_profile
        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
