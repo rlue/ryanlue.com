@@ -7,9 +7,11 @@ reddit_post: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_fig
 featured_comments:
   - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djkgbtn/'
     context: true
+  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djkthy8/'
   - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk8fbu/'
     context: true
-  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk73ro/'
+  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djkkrif/'
+    context: true
 ---
 
 PGP keys and SSH keys are different. It took me longer than I care to admit to understand this, given that the [first StackExchange thread I found on the subject][interch]{:target="_blank"} made it pretty clear that it’s not trivial to use one where you’re supposed to use the other.
@@ -149,7 +151,7 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
 
 8. Authorize key on remote server:
 
-       $ brew install ssh-copy-id
+       $ brew install ssh-copy-id       # if you don’t already have it
        $ ssh-copy-id server_nickname
 
    (Big thanks to /u/ivanwick for pointing this out — much more compact than my previous way of doing it!)
@@ -167,7 +169,9 @@ If you have a password on your authorization-only subkey, be sure to have `pinen
 
     $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 
-Otherwise, PGP-key-authenticated SSH login may fail silently altogether (with a fallback to password authentication, if you have that enabled).
+I have not been able to figure out how to get the alternative, terminal-based `pinentry-curses` to work for SSH authentication. After the initial setup, it works fine for ordinary GPG operations, but fails silently altogether on SSH logins.
+
+(If you _do_ choose to try to get `pinentry-curses` working, [be sure to set the `$GPG_TTY` environment variable][curses]{:target="_blank"}, ideally in your `.bash_profile`, first.)
 
 ### GNOME/XFCE Users
 
@@ -181,4 +185,5 @@ This guide is written for Mac users, but if you’re a GNOME user who found your
 [incenp]: https://incenp.org/notes/2014/gnupg-for-ssh-authentication.html
 [infosec]: https://security.stackexchange.com/questions/163026/does-it-defeat-the-purpose-to-create-a-gpg-authentication-subkey-that-is-not-pas
 [new]: https://gnupg.org/faq/whats-new-in-2.1.html#autostart
+[curses]: https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
 [gnome]: https://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key
