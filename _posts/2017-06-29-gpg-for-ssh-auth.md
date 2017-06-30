@@ -5,6 +5,8 @@ category: guides
 tags: [ssh, pgp, cli, mac]
 reddit_post: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/'
 featured_comments:
+  - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djkgbtn/'
+    context: true
   - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk8fbu/'
     context: true
   - url: 'https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djk73ro/'
@@ -145,17 +147,12 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
        2048 SHA256:zQ1wF6qOq8UNqcSRMYhDc+Cg3yM9lgp8dWvXwjnPcvU (none)
        (RSA)
 
-8. Authorize key on remote server (note the capital `-L`, which returns the public key rather than the fingerprint):
+8. Authorize key on remote server:
 
-       $ ssh-add -L > authorized_keys
-       $ scp authorized_keys server_nickname:~/.ssh/authorized_keys
-       Host key fingerprint is SHA256:MFojxaB+ZEppy+wCK7loru5d1dADh02feKSkeZdrxPA
+       $ brew install ssh-copy-id
+       $ ssh-copy-id server_nickname
 
-       username@server.domain.com's password:
-       authorized_keys                               100%  388     0.4KB/s   00:00
-       $ rm authorized_keys
-
-   (Be careful with the `scp` command above: it assumes you already have a `~/.ssh` directory on your SSH server, and that it doesn’t already contain anyone else’s public keys. If it does, you’ll have to go in and add your key manually.)
+   (Big thanks to /u/ivanwick for pointing this out — much more compact than my previous way of doing it!)
 
 9. Log in!
 
