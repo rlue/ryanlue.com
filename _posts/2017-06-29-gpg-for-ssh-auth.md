@@ -105,30 +105,25 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
        HostName      server.domain.com
        User          username
 
-2. Always display key IDs in gpg:
-
-       # ~/.gnupg/gpg.conf
-       keyid-format short
-
-3. Enable SSH support in gpg-agent:
+2. Enable SSH support in gpg-agent:
 
        # ~/.gnupg/gpg-agent.conf
        enable-ssh-support
 
-4. [Initialize `SSH_AUTH_SOCK` and launch gpg-agent on login][new]{:target="_blank"}:
+3. [Initialize `SSH_AUTH_SOCK` and launch gpg-agent on login][new]{:target="_blank"}:
 
        # ~/.bash_profile
        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
        gpgconf --launch gpg-agent
 
-5. Source your `.bash_profile`, (re)starting gpg-agent to load the new config:
+4. Source your `.bash_profile`, (re)starting gpg-agent to load the new config:
 
        $ gpgconf --kill gpg-agent  # (just in case it’s already running)
        $ source ~/.bash_profile
 
 ### Adding keys
 
-6. Tell gpg-agent which subkey to pass to ssh by adding its “keygrip” to `~/.gnupg/sshcontrol`:
+5. Tell gpg-agent which subkey to pass to ssh by adding its “keygrip” to `~/.gnupg/sshcontrol`:
 
        $ gpg -k --with-keygrip
        /Users/you/.gnupg/pubring.kbx
@@ -143,20 +138,20 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
              Keygrip = 32BC5688805A640D495E8A7B41EC78F74E77E098
        $ echo 32BC5688805A640D495E8A7B41EC78F74E77E098 > ~/.gnupg/sshcontrol
 
-7. Confirm key has been added:
+6. Confirm key has been added:
 
        $ ssh-add -l
        2048 SHA256:zQ1wF6qOq8UNqcSRMYhDc+Cg3yM9lgp8dWvXwjnPcvU (none)
        (RSA)
 
-8. Authorize key on remote server:
+7. Authorize key on remote server:
 
        $ brew install ssh-copy-id       # if you don’t already have it
        $ ssh-copy-id server_nickname
 
    (Big thanks to /u/ivanwick for pointing this out — much more compact than my previous way of doing it!)
 
-9. Log in!
+8. Log in!
 
        $ ssh server_nickname
 
@@ -171,7 +166,7 @@ If you have a password on your authorization-only subkey, be sure to have `pinen
 
 I have not been able to figure out how to get the alternative, terminal-based `pinentry-curses` to work for SSH authentication. After the initial setup, it works fine for ordinary GPG operations, but fails silently altogether on SSH logins.
 
-(If you _do_ choose to try to get `pinentry-curses` working, [be sure to set the `$GPG_TTY` environment variable][curses]{:target="_blank"}, ideally in your `.bash_profile`, first.)
+(If you _do_ choose to try to get `pinentry-curses` working, the aforementioned “initial setup” involves [setting the `$GPG_TTY` environment variable][curses]{:target="_blank"}, ideally in your `.bash_profile`, first.)
 
 ### GNOME/XFCE Users
 
