@@ -74,7 +74,7 @@ The Players
 
 * `pinentry` / `pinentry-mac`
 
-  This is a lightweight program used to accept password input so that GnuPG doesn’t have to (for more on the security considerations behind this design, see [here][pinentry]{:target="_blank"}). This is installed as a dependency of `gpg`, but for some reason, fails to be invoked on SSH logins. If you want to put a password on your SSH authorization key, be sure to `brew install pinentry-mac`.
+  This is a lightweight program used to accept password input so that GnuPG doesn’t have to (for more on the security considerations behind this design, see [here][pinentry]{:target="_blank"}). This is installed as a dependency of `gpg`, but fails to be invoked by `ssh` for reasons beyond the scope of this guide. The GUI version of the utility, `pinentry-mac`, is the easiest alternative.
 
 The Procedure
 -------------
@@ -89,12 +89,16 @@ If you’re reading this guide, you probably already have a PGP key; we just nee
 
 and may skip down to Step 1 below.
 
-If not, follow the directions under “Create an authentication subkey” [here][incenp]{:target="_blank"}. During the process, you’ll be prompted for a passphrase **twice**:
+If not, follow the directions under “Create an authentication subkey” [here][incenp]{:target="_blank"}.
 
-  1. first, to set a passphrase for the new subkey,
-  2. and then to provide the passphrase belonging to its parent key.
+During the process, you’ll be prompted for your private key’s passphrase. It’s not stated anywhere in the prompt, but you actually have two options:
+
+  1. enter the passphrase (in which case, that same passphrase will apply to your new subkey), or
+  2. enter nothing (in which case, you will be prompted to set a separate passphrase for your new subkey, and then asked for your private key’s passphrase again).
   
-If your security needs are not particularly sensitive, I suggest leaving the first one blank (or else you’ll have to enter it when logging into your SSH servers from time to time, and may even run into the aforementioned issues with pinentry). I believe it only poses a security risk in the event that someone gains access to your system and manages to copy the contents of your `~/.gnupg` directory, but [if someone knows something I don’t][infosec]{:target="_blank"}, I’m always happy to learn something new.
+If, like me, you take infosec purely has a hobby and have no real security concerns to speak of, I suggest taking the latter approach and setting **no password** on the subkey (or else you’ll have to enter it when logging into your SSH servers from time to time, and may even run into the aforementioned issues with pinentry). I believe it only poses a security risk in the event that someone gains access to your system and manages to copy the contents of your `~/.gnupg` directory, but [if someone knows something I don’t][infosec]{:target="_blank"}, I’m always happy to learn something new.
+
+If, on the other hand, your situation demands actual security, you should _absolutely_ set a passphrase on the subkey, which will require the use of a pinentry utility. You’ll have to jump through some hoops to get it to work purely in the terminal (which I’ll cover in an upcoming post); in the meantime, be sure to install `pinentry-mac` instead.[^1]
 
 ### Basic configuration
 
@@ -144,7 +148,7 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
        2048 SHA256:zQ1wF6qOq8UNqcSRMYhDc+Cg3yM9lgp8dWvXwjnPcvU (none)
        (RSA)
 
-7. Authorize key on remote server:[^1]
+7. Authorize key on remote server:[^2]
 
        $ brew install ssh-copy-id       # if you don’t already have it
        $ ssh-copy-id server_nickname
@@ -160,35 +164,33 @@ For SSH key authorization to work, the remote host must store a local copy of al
 
 `ssh-agent` manages SSH private keys and presents them to remote hosts for authentication. It comes with a couple helper utilities: `ssh-add` (which, when called with the `-l`/`-L` flags, lists the keys it knows about), and `ssh-copy-id` (which adds those public keys to a given remote host’s list of authorized users). 
 
-`gpg-agent` manages GPG private keys and can share them with `ssh-agent` for use in SSH authentication. In order for this to work, a few things have to happen:
+`gpg-agent` manages GPG private keys and can be used as a drop-in replacement for `ssh-agent`. In order for this to work, a few things have to happen:
 
-1. `ssh-agent` must be directed to listen to `gpg-agent` (by setting `SSH_AUTH_SOCK`),
-2. `gpg-agent` must be directed to talk to `ssh-agent` (either by having the `--enable-ssh-support` option included on the command line or having it set in the `gpg-agent.conf` file), and
+1. `ssh` must be directed to authorize via `gpg-agent` rather than `ssh-agent` (by setting `SSH_AUTH_SOCK`),
+2. `gpg-agent` must be directed to receive authorization requests from `ssh` (either by having the `--enable-ssh-support` option included on the command line or having it set in the `gpg-agent.conf` file), and
 3. the GPG keys you wish to use must be listed in the `sshcontrol` file.
 
 The rest of the setup (namely, adding the public key to the remote host) is the same as it would be for ordinary SSH keys.
 
-Caveats
--------
-
-### `pinentry-mac`
-
-If you have a password on your authorization-only subkey, be sure to have `pinentry-mac` installed and to add the appropriate setting to your `gpg-agent.conf` file:
-
-    $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
-
-I have not been able to figure out how to get the alternative, terminal-based `pinentry-curses` to work for SSH authentication. After the initial setup, it works fine for ordinary GPG operations, but fails silently altogether on SSH logins.
-
-(If you _do_ choose to try to get `pinentry-curses` working, the aforementioned “initial setup” involves [setting the `$GPG_TTY` environment variable][curses]{:target="_blank"}, ideally in your `.bash_profile`, first.)
-
-### GNOME/XFCE Users
+Caveat: GNOME/XFCE Users
+------------------------
 
 This guide is written for Mac users, but if you’re a GNOME user who found yourself looking for insight here, it appears that GNOME keyring runs its own, conflicting version of gpg-agent. This might be outdated information, since the last reference I saw to it was in 2012, but if you’re still having problems, [see here for more][gnome]{:target="_blank"}.
 
 ---
 
 [^1]:
-    Big thanks to /u/ivanwick for [pointing this out][sci] — `ssh-copy-id` makes the process of exporting public keys to an SSH server a breeze.
+    To use `pinentry-mac`, first install it,
+
+        $ brew install pinentry-mac
+
+    then tell `gpg-agent` where to find it:
+
+        # ~/.gnupg/gpg-agent.conf
+        pinentry-program /usr/local/bin/pinentry-mac
+
+[^2]:
+    Big thanks to /u/ivanwick for [pointing this out][sci]{:target="_blank"} — `ssh-copy-id` makes the process of exporting public keys to an SSH server a breeze.
 
     But just in case you ever want to reverse the process (or manually manage authorization on a remote host), here’s a rundown of what’s going on under the hood:
 
