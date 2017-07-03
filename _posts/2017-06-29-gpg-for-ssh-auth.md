@@ -186,11 +186,6 @@ This guide is written for Mac users, but if you’re a GNOME user who found your
 
     then tell `gpg-agent` where to find it:
 
-        $ which pinentry-mac
-        /usr/local/bin/pinentry-mac
-
-    ^
-
         # ~/.gnupg/gpg-agent.conf
         pinentry-program /usr/local/bin/pinentry-mac
 
