@@ -144,16 +144,29 @@ If your security needs are not particularly sensitive, I suggest leaving the fir
        2048 SHA256:zQ1wF6qOq8UNqcSRMYhDc+Cg3yM9lgp8dWvXwjnPcvU (none)
        (RSA)
 
-7. Authorize key on remote server:
+7. Authorize key on remote server:[^1]
 
        $ brew install ssh-copy-id       # if you don’t already have it
        $ ssh-copy-id server_nickname
 
-   (Big thanks to /u/ivanwick for pointing this out — much more compact than my previous way of doing it!)
-
 8. Log in!
 
        $ ssh server_nickname
+
+Recap
+-----
+
+For SSH key authorization to work, the remote host must store a local copy of all authorized users’ public keys. That way, when a user’s ssh client presents their private key on login, the server can compare that against its collection of public keys to see if there’s a match.
+
+`ssh-agent` manages SSH private keys and presents them to remote hosts for authentication. It comes with a couple helper utilities: `ssh-add` (which, when called with the `-l`/`-L` flags, lists the keys it knows about), and `ssh-copy-id` (which adds those public keys to a given remote host’s list of authorized users). 
+
+`gpg-agent` manages GPG private keys and can share them with `ssh-agent` for use in SSH authentication. In order for this to work, a few things have to happen:
+
+1. `ssh-agent` must be directed to listen to `gpg-agent` (by setting `SSH_AUTH_SOCK`),
+2. `gpg-agent` must be directed to talk to `ssh-agent` (either by having the `--enable-ssh-support` option included on the command line or having it set in the `gpg-agent.conf` file), and
+3. the GPG keys you wish to use must be listed in the `sshcontrol` file.
+
+The rest of the setup (namely, adding the public key to the remote host) is the same as it would be for ordinary SSH keys.
 
 Caveats
 -------
@@ -172,6 +185,23 @@ I have not been able to figure out how to get the alternative, terminal-based `p
 
 This guide is written for Mac users, but if you’re a GNOME user who found yourself looking for insight here, it appears that GNOME keyring runs its own, conflicting version of gpg-agent. This might be outdated information, since the last reference I saw to it was in 2012, but if you’re still having problems, [see here for more][gnome]{:target="_blank"}.
 
+---
+
+[^1]:
+    Big thanks to /u/ivanwick for [pointing this out][sci] — `ssh-copy-id` makes the process of exporting public keys to an SSH server a breeze.
+
+    But just in case you ever want to reverse the process (or manually manage authorization on a remote host), here’s a rundown of what’s going on under the hood:
+
+    A server stores a list of authorized SSH public keys in each user account’s `~/.ssh/authorized_keys` file, where each line looks something like this:
+
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAedj8cCrSl8bR6/lmAABAQDuo9KF8ulWhbp0sUG6W1NQsQS/svxoY3WpXh8V0gCPc2D+QMj6jIhXS17PgU5dSwEUS07KB4s5Kbvc2SvLjNO9Uio6RK2M1wd0LdS678ZBiC/0LOqsdn6Et6PAte39K1vdC4YUVvVUXONB29aWRpFTfMZ3ZZvhi9L3+/GnwGgWHSpHH9btfstcHh0gPqNIubwtWpy1R27R/dAVElON95JTIk++c2rUoOEyq8CeOMhIEiVd2X1GrJ1Eutr8SkIBpilhLI5lLM85v/ruXDlJCpBzshFJLmdYHvsonfgHQ5ynxwLpMcEwLbqrBiRTGVgIgTS28TtX (none)
+
+    This public key comes from the client (naturally); you can get a listing of public keys on your computer with the following (note the capital `-L`):
+        
+        $ ssh-add -L
+
+    All `ssh-copy-id` does is take this information and append it to the remote host’s `~/.ssh/authorized_keys` file. On a system with many users, I prefer to do this manually, so that I can add a comment above each public key to remind me whom it belongs to. If you ever wish to deauthorize a key, simply delete the corresponding line from the file.
+
 [interch]: https://superuser.com/questions/360507/are-gpg-and-ssh-keys-interchangable
 [iu]: https://kb.iu.edu/d/aews
 [rfc]: https://tools.ietf.org/html/rfc4880
@@ -182,3 +212,4 @@ This guide is written for Mac users, but if you’re a GNOME user who found your
 [new]: https://gnupg.org/faq/whats-new-in-2.1.html#autostart
 [curses]: https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
 [gnome]: https://budts.be/weblog/2012/08/ssh-authentication-with-your-pgp-key
+[sci]: https://www.reddit.com/r/linux/comments/6k8nw3/killed_two_days_figuring_out_how_to_use_gpg_keys/djkgbtn/
