@@ -114,7 +114,7 @@ If, on the other hand, your situation demands actual security, you should _absol
        # ~/.gnupg/gpg-agent.conf
        enable-ssh-support
 
-3. [Initialize `SSH_AUTH_SOCK` and launch gpg-agent on login][new]{:target="_blank"}:
+3. Initialize `SSH_AUTH_SOCK` and launch gpg-agent on login:[^2]
 
        # ~/.bash_profile
        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -148,7 +148,7 @@ If, on the other hand, your situation demands actual security, you should _absol
        2048 SHA256:zQ1wF6qOq8UNqcSRMYhDc+Cg3yM9lgp8dWvXwjnPcvU (none)
        (RSA)
 
-7. Authorize key on remote server:[^2]
+7. Authorize key on remote server:[^3]
 
        $ brew install ssh-copy-id       # if you don’t already have it
        $ ssh-copy-id server_nickname
@@ -190,6 +190,13 @@ This guide is written for Mac users, but if you’re a GNOME user who found your
         pinentry-program /usr/local/bin/pinentry-mac
 
 [^2]:
+    **WARNING:** This step actually borked my graphical login on Linux (openSUSE Tumbleweed 13.3 / KDE Plasma 5) — that is, I would enter my password, it would start to log me in, and then it would throw me right back to the login prompt. If this happens to you, you’ll need to log in via the virtual console (`<C-Alt-F1>`) and remove the offending lines from your `.bash_profile`.
+
+    [The official documentation states that it’s required][new]{:target="_blank"}, and it certainly is on Mac OS, but it looks like something in my desktop environment was still starting gpg-agent automatically, and it couldn’t handle having it called a second time.
+
+    (To determine whether gpg-agent is running, simply run the `gpg-agent` command without any arguments.)
+
+[^3]:
     Big thanks to /u/ivanwick for [pointing this out][sci]{:target="_blank"} — `ssh-copy-id` makes the process of exporting public keys to an SSH server a breeze.
 
     But just in case you ever want to reverse the process (or manually manage authorization on a remote host), here’s a rundown of what’s going on under the hood:
