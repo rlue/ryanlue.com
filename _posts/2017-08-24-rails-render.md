@@ -5,7 +5,7 @@ category: fundamentals
 tags: [rails]
 ---
 
-Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (`site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search]. This post is an attempt to supplement the official documentation with a general introduction to the `render` method.
+Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (search query: `site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search]. This post is an attempt to supplement the official documentation with a general introduction to the `render` method.
 
 ### In controllers
 
