@@ -40,7 +40,7 @@ def index
 end
 ```
 
-**`render :index`** says, ‘combine the data I've prepared (`@books = Book.all`) and the `books/index.html.erb` view template to generate a complete HTML document, then send that back to the client.’
+**`render :index`** says, ‘combine the data I've prepared (`@books = Book.all`) with the `books/index.html.erb` view template to generate a complete HTML document, then send that back to the client.’
 
 **`redirect_to @book`** says, ‘tell the client to start the whole process over again, issuing a new `GET` request to `url_for(@book)`.
 
@@ -129,7 +129,7 @@ On the other hand, when used in view templates, `render` is for incorporating **
 In characteristic Rails style, `render` accepts a variety of argument types, and reads pretty naturally to the untrained eye (all things considered). But because it serves two unrelated purposes, it’s actually rather strict about what each argument type does (unlike other methods in Rails).
 
 Argument to `render`   | Used in     | Renders  | ...from        
----:                   | :---        | :---     | :---           
+:---                   | :---        | :---     | :---           
 `:index`               | Controllers | Views    | same controller
 `template: 'post/new'` | Controllers | Views    | any controller 
 `'flash'`              | Views       | Partials | same folder    
