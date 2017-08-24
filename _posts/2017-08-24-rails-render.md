@@ -86,11 +86,13 @@ Note that the `#create` action never tries to render its own view. [As the docum
 
 #### Rendering views from other controllers
 
-The usage outlined above only works for view templates that belong to the originating controller. To render view from other controllers, pass the `:template` option instead:
+The usage outlined above only works for view templates that belong to the originating controller. You can also render views from other controllers by passing the `:template` option instead:
 
 ```ruby
 render template: 'authors/new'
 ```
+
+although I’d be hard-pressed to think of a scenario where this is a good idea.
 
 #### Implications for `flash`
 
