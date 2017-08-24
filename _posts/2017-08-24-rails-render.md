@@ -93,12 +93,13 @@ On the other hand, `render` does something totally different in view templates: 
 
 ### In review
 
-                              | Argument type               | Used in     | Converts | ...from         | ...into
----:                          | :---                        | :---        | :---     | :---            | :---
-`render :index`               | Symbol                      | Controllers | Views    | same controller | the HTML document in an HTTP response
-`render template: 'post/new'` | Hash (with `:template` key) | Controllers | Views    | any controller  | the HTML document in an HTTP response
-`render 'flash'`              | String                      | Views       | Partials | same folder     | a page component in a larger view template
-`render 'shared/flash'`       | String                      | Views       | Partials | any folder      | a page component in a larger view template
+| `render _____`         |  Used in     | Converts | ...from         | ...into
+| ---:                   |  :---        | :---     | :---            | :---
+| `:index`               |  Controllers | Views    | same controller | the HTML document in an HTTP response
+| `template: 'post/new'` |  Controllers | Views    | any controller  | the HTML document in an HTTP response
+| `'flash'`              |  Views       | Partials | same folder     | a page component in a larger view template
+| `'shared/flash'`       |  Views       | Partials | any folder      | a page component in a larger view template
+
 ---
 
 [^1]: After Step 3 (when the submission failed), your browser would render all the same content you would normally see at the URL for `books#new`, but it would actually be pointing to the URL for `books#create`. It would have gotten this content as the result of a `POST` request, so when you refresh, it should attempt to submit the same `POST` request again, prompting you to confirm that you want to resend the data first.
