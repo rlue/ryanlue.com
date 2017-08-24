@@ -67,7 +67,10 @@ will redirect to a new URL (whatever is routed to `books#show` for the new recor
 > 3. the submission fails, and
 > 4. you refresh the page.
 > 
-> Do you see a New Book form again? Which URL is your browser on?[^1]
+> Should the page render successfully? Which URL should you see in your
+> browser’s address bar?
+> 
+> Follow this footnote for the answer.[^1]
 
 Note that the `#create` action never tries to render its own view. [As the documentation states][render_docs] (emphasis mine),
 
