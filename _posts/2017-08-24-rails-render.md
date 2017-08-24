@@ -5,7 +5,9 @@ category: fundamentals
 tags: [rails]
 ---
 
-Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (search query: `site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search]. This post is an attempt to supplement the official documentation with a general introduction to the `render` method.
+Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (search query: `site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search].
+
+This is especially confusing because `render` is used both in controllers and in view templates, and serves related (but wholly different) purposes in each. While there are multiple pages describing what `render` does in different contexts, there is no single document outlining the overall scope of where and how it can be used. This post is an attempt to address this deficiency and cover the two main purposes of `render` in broad strokes.
 
 ### In controllers
 
@@ -40,9 +42,11 @@ end
 
 **`render :index`** says, ‘combine the data I've prepared (`@books = Book.all`) and the `books/index.html.erb` view template to generate a complete HTML document, then send that back to the client.’
 
-**`redirect_to @book`** says, ‘tell the client to start the process over again, issuing a new `GET` request to `url_for(@book)`.
+**`redirect_to @book`** says, ‘tell the client to start the whole process over again, issuing a new `GET` request to `url_for(@book)`.
 
-If you omit both, the action will render a template with the same name as the action itself. You only need to call `render` explicitly when the view template you want doesn’t match the action you’re rendering it from. Thus, the boilerplate
+If you omit both, the action will render a template with the same name as the action itself. In other words, you only need to call `render` explicitly when the view template you want doesn’t match the action you’re rendering it from.
+
+Thus, this controller boilerplate
 
 ```ruby
 def create
@@ -60,7 +64,7 @@ def create
 end
 ```
 
-will redirect to a new URL (whatever is routed to `books#show` for the new record) on success, or stay on the `books#create` URL and return the `books/new.html.erb` view on failure.
+will redirect to a new URL (whatever is routed to `books#show` for the new `@book` record) on success, or stay on the `books#create` URL and return the `books/new.html.erb` view on failure.
 
 > #### Comprehension Check
 > 
@@ -88,17 +92,41 @@ The usage outlined above only works for view templates that belong to the origin
 render template: 'authors/new'
 ```
 
+#### Implications for `flash`
+
+The `flash` hash is a mechanism in Rails for persisting data (usu. to provide feedback in the UI) up until the completion of the next controller action. If you set a `flash` message in this controller action, it will be available to:
+
+* the current view template,
+* the next controller action, and
+* the next controller action’s view template,
+
+at which point it will be discarded.
+
+Generally, the idea is for flash messages to appear only once. If your controller action ends with a `redirect_to`, then everything’s dandy — there is no current view template, so you’ll only see it on the next page.
+
+But if you’re `render`ing a template, you’ll wind up seeing the flash message both on the current page and the next one. Hence, Rails provides `flash.now`, whose data is discarded at the end of the current controller action.
+
+> #### Comprehension Check
+> 
+> Suppose you wanted to `render` the view in the current controller action, but
+> also set a flash message that does not appear until the _next_ controller
+> action (_i.e.,_ page load). How could you go about that?
+> 
+> Follow this footnote for the answer.[^2]
+
 ### In view templates
 
-On the other hand, `render` does something totally different in view templates: it renders **partials**. For this use case, [the official documentation is more than ample][partials], but the upshot is this:
+On the other hand, when used in view templates, `render` is for incorporating **partials**. For this use case, [the official documentation is more than ample][partials], but the upshot is this:
 
-* You can create **partial view templates** to insert into your standard templates (think of them as page components).
+* You can create **partial view template** files to be inserted into your standard templates (think of them as modular page components).
 * Filenames of partials must begin with an underscore (_e.g.,_ `_nav.html.erb`).
 * Use `render 'nav'` if you want to include the `_nav.html.erb` partial **from a view located in the same folder**.
-* Use `render 'shared/nav'` if you want to include the `app/views/shared/_nav.html.erb` partial **from any view in your project**.
-* Various options and shorthand syntaxes exist for passing data into a partial, rendering multiple partials from a collection, and more.
+* Use `render 'shared/nav'` if you want to include the partial at `app/views/shared/_nav.html.erb` **from any view in your project**.
+* Various options and shorthand syntaxes exist for passing data into a partial, rendering multiple partials from a collection object, and more.
 
 ### In review
+
+In characteristic Rails style, `render` accepts a variety of argument types, and reads pretty naturally to the untrained eye (all things considered). But because it serves two unrelated purposes, it’s actually rather strict about what each argument type does (unlike other methods in Rails).
 
 Argument to `render`   | Used in     | Renders  | ...from        
 ---:                   | :---        | :---     | :---           
@@ -116,6 +144,17 @@ That’s the gist of it, anyway. For more details, as usual, the official docume
     After Step 3 (when the submission failed), your browser would render all the same content you would normally see at the URL for `books#new`, but it would actually be pointing to the URL for `books#create`. It would have gotten this content as the result of a `POST` request, so when you refresh, it should attempt to submit the same `POST` request again, prompting you to confirm that you want to resend the data first.
     
     Or at least, that’s how it should work in principle. In my own cursory testing, it actually submits a `GET` request to the `books#create` URL upon refresh, which results in a Rails routing error (`No route matches [GET] "/books/create"`). If anyone has any insight on this matter, I’d be glad to hear it.
+
+[^2]:
+
+    Simply make an explicit call to `render` _before_ setting the flash message:
+
+    ```ruby
+    def index
+      render :index
+      flash.notice = 'foo'
+    end
+    ```
 
 [search]: https://www.google.com/search?q=site:api.rubyonrails.org+render
 [render_docs]: http://api.rubyonrails.org/classes/ActionController/Base.html
