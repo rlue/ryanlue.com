@@ -23,16 +23,20 @@ This last step occurs explicitly when you call `render` or `redirect_to`, or **i
 
 That is, 
 
-    def index
-      @books = Book.all
-    end
+```ruby
+def index
+  @books = Book.all
+end
+```
 
 is the same as
 
-    def index
-      @books = Book.all
-      render :index
-    end
+```ruby
+def index
+  @books = Book.all
+  render :index
+end
+```
 
 **`render :index`** says, ‘combine the data I've prepared (`@books = Book.all`) and the `books/index.html.erb` view template to generate a complete HTML document, then send that back to the client.’
 
@@ -96,12 +100,14 @@ On the other hand, `render` does something totally different in view templates: 
 
 ### In review
 
-| `render _____`         |  Used in     | Converts | ...from         | ...into
-| ---:                   |  :---        | :---     | :---            | :---
-| `:index`               |  Controllers | Views    | same controller | the HTML document in an HTTP response
-| `template: 'post/new'` |  Controllers | Views    | any controller  | the HTML document in an HTTP response
-| `'flash'`              |  Views       | Partials | same folder     | a page component in a larger view template
-| `'shared/flash'`       |  Views       | Partials | any folder      | a page component in a larger view template
+Argument to `render`   | Used in     | Renders  | ...from        
+---:                   | :---        | :---     | :---           
+`:index`               | Controllers | Views    | same controller
+`template: 'post/new'` | Controllers | Views    | any controller 
+`'flash'`              | Views       | Partials | same folder    
+`'shared/flash'`       | Views       | Partials | any folder     
+
+That’s the gist of it, anyway. For more details, as usual, the official documentation is the way to go — but at least now, you’ll know what part of it to scope out.
 
 ---
 
