@@ -102,7 +102,9 @@ On the other hand, `render` does something totally different in view templates: 
 
 ---
 
-[^1]: After Step 3 (when the submission failed), your browser would render all the same content you would normally see at the URL for `books#new`, but it would actually be pointing to the URL for `books#create`. It would have gotten this content as the result of a `POST` request, so when you refresh, it should attempt to submit the same `POST` request again, prompting you to confirm that you want to resend the data first.
+[^1]:
+
+After Step 3 (when the submission failed), your browser would render all the same content you would normally see at the URL for `books#new`, but it would actually be pointing to the URL for `books#create`. It would have gotten this content as the result of a `POST` request, so when you refresh, it should attempt to submit the same `POST` request again, prompting you to confirm that you want to resend the data first.
 
 Or at least, that’s how it should work in principle. In my own cursory testing, it actually submits a `GET` request to the `books#create` URL upon refresh, which results in a Rails routing error (`No route matches [GET] "/books/create"`). If anyone has any insight on this matter, I’d be glad to hear it.
 
