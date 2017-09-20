@@ -80,7 +80,7 @@ will redirect to a new URL (whatever is routed to `books#show` for the new `@boo
 > 
 > Follow this footnote for the answer.[^1]
 
-Note that the `#create` action never tries to render its own view. [As the documentation states][render_docs] (emphasis mine),
+Note that the `#create` action does not have a view of its own to render. [As the documentation states][render_docs] (emphasis mine),
 
 > These two methods [`render` and `redirect_to`] represent the two basic action archetypes used in Action Controllers: **Get-and-show** and **do-and-redirect**. Most actions are variations on these themes.
 
