@@ -5,10 +5,6 @@ layout: bare
 stylesheet: /about/cv.css
 ---
 
-<!---
-TODO: Add Chinese version (research how to switch?)
--->
-
 <header>
   <a href="moc.eulnayr04%ollehA3%otliam" class="nameplate__email">
     <h1 class="nameplate__heading">Ryan Lue</h1>
@@ -25,47 +21,58 @@ TODO: Add Chinese version (research how to switch?)
 Projects
 --------
 
-### Frontend Web Development
+### Web Development
 {: .projects__section }
+
+* <div class="projects__role projects__role--creator">Creator</div>
+
+  <span class="projects__name">[Bodega][bdg]{:target="_blank"}:</span> A supply chain management tool for wholesalers.
+
+  Made for a local restaurant to facilitate logistics and provide automated reports for accounting.
+
+  Built with Rails (**MVC** / **relational database design** / **RESTful architecture**). API actions supported by **jQuery/AJAX UI components** for seamless interaction.
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
   <span class="projects__name">[Solana][sol]{:target="_blank"}:</span> A blog template for the Jekyll static site generator.
 
-  **Responsive layout** and **touch gestures** written in HTML, JavaScript, & CSS (Sass), **without Bootstrap or jQuery**. Features built-in protection against email harvesting bots.
+  **Responsive layout** and **touch gestures** written in HTML, vanilla JavaScript, & CSS (Sass), **without Bootstrap or jQuery**. Features built-in protection against email harvesting bots.
 
-### Approximate String Matching
+### Ruby Gems
 {: .projects__section }
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Something Like That][slt]{:target="_blank"}:</span> A Ruby gem for comparing long, multi-word phrases.
+  <span class="projects__name">[Something Like That][slt]{:target="_blank"}:</span> A fuzzy string matcher for long, multi-word phrases.
 
   Most fuzzy string matchers use algorithms best suited for comparing _individual terms._ This library uses the <dfn>Monge-Elkan method</dfn>, a two-stage process designed specifically for _multi-word phrases_ ([Jimenez et al. 2009][mem]{:target="_blank"}).
   
   Good for **ranking search results collected from diverse sources**.
 
-* <div class="projects__role projects__role--contributor">Contributor</div>
+### Vim Plugins
+{: .projects__section }
 
-  <span class="projects__name">[fuzzy\_match][fm]{:target="_blank"}:</span> A Ruby gem for finding a needle in a haystack.
+* <div class="projects__role projects__role--creator">Creator</div>
 
-  Previously implemented a “fallback” algorithm used only in edge cases. My contributions adapted the main algorithm to handle the edge cases, **reducing overall complexity**.
+  <span class="projects__name">[Getting Things Down][gtd]{:target="_blank"}:</span> Outlining and TODO shortcuts for GTD in Markdown.
+
+  Provides automatic text folding, TODO highlighting, and per-section progress indicators for tracking productivity in plain text files using the Markdown format.
 
 ### Command Line Utilities
 {: .projects__section }
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Little Red Flag][lrf]{:target="_blank"}:</span> A daemon for monitoring mailboxes.
+  <span class="projects__name">[Spore][spr]{:target="_blank"}:</span> A lightweight dotfile management solution.
 
-  Watches local and remote mailboxes for changes, then triggers an external program to sync. Utilizes threading to simultaneously manage multiple listeners. Provides smart detection of available mail utilities, and parses their respective config files.
+  Populates a home directory with dotfiles from an XDG-style `~/.config` directory, in a manner similar to GNU Stow.
 
 Skills
 ------
 
 * <span class="skills__list-marker">💬</span> Technical communication  
 * <span class="skills__list-marker">🖥️</span> Ruby / Rails / RSpec
-* <span class="skills__list-marker">🖥️</span> HTML / CSS / JavaScript
+* <span class="skills__list-marker">🖥️</span> HTML / CSS / JavaScript (ES6)
 * <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
 * <span class="skills__list-marker">🖥️</span> Git
 
@@ -115,6 +122,7 @@ Education
   Bachelor of Arts in Urban Studies and Planning
   <span class="education__institution">UC San Diego</span>
 
+<!--- 
 Interests
 ---------
 
@@ -122,6 +130,7 @@ Interests
 * <span class="interests__list-marker">⛰️</span> Hiking
 * <span class="interests__list-marker">🐶</span> Dog training
 * <span class="interests__list-marker">🔧</span> Bicycle mechanics
+-->
 
 <script type="text/javascript">
 var Contact = {};
@@ -147,11 +156,12 @@ Contact.patchButtons('nameplate__phone');
 </script>
 
 [gh]: https://github.com/rlue/
+[bdg]: https://bodega.ryanlue.com/
 [sol]: https://github.com/rlue/jekyll-solana
 [slt]: https://github.com/rlue/something_like_that
 [mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
-[fm]: https://github.com/seamusabshere/fuzzy_match/pull/24
-[lrf]: https://github.com/rlue/little_red_flag
+[gtd]: https://github.com/rlue/vim-getting-things-down
+[spr]: https://github.com/rlue/spore
 [that]: https://thatinventions.com/
 [freez]: https://www.kickstarter.com/projects/that/freezthat-frozen-treats-in-a-flash
 [trin]: http://trinityscholar.com/

@@ -30,6 +30,11 @@ nav_menu:
     icon: /i/icons.svg#email
 
 projects:
+  - title: Bodega
+    teaser: A supply chain management tool for wholesalers.
+    url: https://bodega.ryanlue.com/
+    role: Creator
+    category: Rails App
   - title: Getting Things Down
     teaser: Outlining and TODO shortcuts for GTD in plain ol' Markdown.
     url: https://github.com/rlue/vim-getting-things-down
