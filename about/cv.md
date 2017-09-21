@@ -13,7 +13,8 @@ stylesheet: /about/cv.css
   <ul class="nameplate__contact">
     <li><span class="nameplate__contact-list-marker">🌏</span> <a href="http://ryanlue.com/" target="_blank" class="nameplate__blog">ryanlue.com</a></li>
     <li><span class="nameplate__contact-list-marker">🇹🇼</span> Taipei, Taiwan</li>
-    <li><span class="nameplate__contact-list-marker">📞</span> <a href="690358839688B2%A3%let" class="nameplate__phone">938 853 096</a></li>
+    <li><span class="nameplate__contact-list-marker">🇺🇸</span> U.S. Citizen</li>
+    <li><span class="nameplate__contact-list-marker">📞</span> <a href="64865462651B2%A3%let" class="nameplate__phone">645-6846</a></li>
     <li class="nameplate__pdf-link"><span class="nameplate__contact-list-marker">📄</span> <a href="Ryan%20Lue%20(CV).pdf">Download as PDF</a></li>
   </ul>
 </header>
