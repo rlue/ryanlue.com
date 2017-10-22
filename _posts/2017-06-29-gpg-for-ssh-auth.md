@@ -91,14 +91,18 @@ and may skip down to Step 1 below.
 
 If not, follow the directions under “Create an authentication subkey” [here][incenp]{:target="_blank"}.
 
-During the process, you’ll be prompted for your private key’s passphrase. It’s not stated anywhere in the prompt, but you actually have two options:
+#### Retraction
 
-  1. enter the passphrase (in which case, that same passphrase will apply to your new subkey), or
-  2. enter nothing (in which case, you will be prompted to set a separate passphrase for your new subkey, and then asked for your private key’s passphrase again).
-  
-If, like me, you take infosec purely has a hobby and have no real security concerns to speak of, I suggest taking the latter approach and setting **no password** on the subkey (or else you’ll have to enter it when logging into your SSH servers from time to time, and may even run into the aforementioned issues with pinentry). I believe it only poses a security risk in the event that someone gains access to your system and manages to copy the contents of your `~/.gnupg` directory, but [if someone knows something I don’t][infosec]{:target="_blank"}, I’m always happy to learn something new.
+_This segment originally outlined the option of using no password at all for your authentication subkey, but the described behavior appears to have been removed in recent versions of GnuPG. In any case, the option remains to use [a **different** password for subkeys][diffpass]._
 
-If, on the other hand, your situation demands actual security, you should _absolutely_ set a passphrase on the subkey, which will require the use of a pinentry utility. You’ll have to jump through some hoops to get it to work purely in the terminal (which I’ll cover in an upcoming post); in the meantime, be sure to install `pinentry-mac` instead.[^1]
+> During the process, you’ll be prompted for your private key’s passphrase. It’s not stated anywhere in the prompt, but you actually have two options:
+> 
+>   1. enter the passphrase (in which case, that same passphrase will apply to your new subkey), or
+>   2. enter nothing (in which case, you will be prompted to set a separate passphrase for your new subkey, and then asked for your private key’s passphrase again).
+> 
+> If, like me, you take infosec purely has a hobby and have no real security concerns to speak of, I suggest taking the latter approach and setting **no password** on the subkey (or else you’ll have to enter it when logging into your SSH servers from time to time, and may even run into the aforementioned issues with pinentry). I believe it only poses a security risk in the event that someone gains access to your system and manages to copy the contents of your `~/.gnupg` directory, but [if someone knows something I don’t][infosec]{:target="_blank"}, I’m always happy to learn something new.
+>
+> If, on the other hand, your situation demands actual security, you should _absolutely_ set a passphrase on the subkey, which will require the use of a pinentry utility. You’ll have to jump through some hoops to get it to work purely in the terminal (which I’ll cover in an upcoming post); in the meantime, be sure to install `pinentry-mac` instead.[^1]
 
 ### Basic configuration
 
@@ -217,6 +221,7 @@ This guide is written for Mac users, but if you’re a GNOME user who found your
 [ssh-agent]: https://lists.gnupg.org/pipermail/gnupg-users/2012-July/045036.html
 [pinentry]: https://superuser.com/a/1108407/444076
 [incenp]: https://incenp.org/notes/2014/gnupg-for-ssh-authentication.html
+[diffpass]: https://lists.gnupg.org/pipermail/gnupg-users/2013-July/047174.html
 [infosec]: https://security.stackexchange.com/questions/163026/does-it-defeat-the-purpose-to-create-a-gpg-authentication-subkey-that-is-not-pas
 [new]: https://gnupg.org/faq/whats-new-in-2.1.html#autostart
 [curses]: https://www.gnupg.org/documentation/manuals/gnupg/Common-Problems.html
