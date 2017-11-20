@@ -67,6 +67,7 @@ exclude:
   - LICENSE
   - README.md
   - TODO.md
+  - tags
 include:
   - .well-known
 
