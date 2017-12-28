@@ -77,7 +77,7 @@ Skills
 Work History
 ------------
 
-### Web Development Consultant
+### Full-Stack Developer
 {: .work-history__position }
 
 * <div class="work-history__tenure">2017</div>
