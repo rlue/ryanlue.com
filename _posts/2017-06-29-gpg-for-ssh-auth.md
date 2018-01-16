@@ -47,7 +47,7 @@ In any case, I almost never use my PGP key, so I still don’t really know _how_
 
 (Too late!)
 
-As mentioned above, PGP keys and SSH keys are not the same thing, so you can’t use one in place of the other. However, GnuPG _does_ support the use of its PGP keys for SSH authentication. Believe you me, it can be done: the documentation is sparse, but the spirit is willing and the flesh is greasy and sun-starved, and yearns to remain so. My loss is your gain! Come along with me, and you too can make gpg your bitch.
+As mentioned above, PGP keys and SSH keys are not the same thing, so you can’t just use one in place of the other. However, you _can_ get GnuPG to manage this trickery for you, if you ask nicely. I had my moments of doubt and tribulation, but somewhere I read that Werner Koch does this himself, so I pressed on. It was a long and difficult road. Here’s the short version.
 
 The Players
 -----------
