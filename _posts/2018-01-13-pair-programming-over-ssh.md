@@ -3,6 +3,7 @@ title: ssh + tmux = Pair Programming for Command Line Junkies
 teaser: A complete guide to pairing, using tools you already know and love.
 category: guides
 tags: [ssh, tmux, cli, vim, ide]
+reddit_post: 'https://www.reddit.com/r/linux/comments/7qrtu2/security_is_hard_a_guide_to_broadcasting_your/'
 ---
 
 Traditionally, pair programming is done in person, with two engineers sitting
