@@ -6,6 +6,23 @@ tags: [ssh, tmux, cli, vim, ide]
 reddit_post: 'https://www.reddit.com/r/linux/comments/7qrtu2/security_is_hard_a_guide_to_broadcasting_your/'
 ---
 
+> ### Edit: Late to the Party
+>
+> Looks like I wasn’t the first one to come up with this idea. Some bright
+> folks over on reddit have pointed out [tmate][], a fork of tmux
+> purpose-built to facilitate precisely the same process described in this
+> guide (and with far more sophisticated security measures, from the looks of
+> it).
+>
+> It comes with a lot of nifty features, like a web interface for you to view
+> the shared session in your browser.
+>
+> Unfortunately, it looks like the project hasn’t been touched in almost two
+> years. No reason it won’t get the job done, though, and it’ll save you loads
+> of time over reading through this mess.
+
+[tmate]: https://tmate.io/
+
 Traditionally, pair programming is done in person, with two engineers sitting
 side-by-side at the same computer — but I think I speak for all of us when I
 say that seeing other humans face-to-face isn’t the reason I got into this
