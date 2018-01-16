@@ -131,7 +131,7 @@ session (think screenshare vs. remote desktop).
 
 ### Incoming connections
 
-> #### ⚠️ Bumpy analogy ahead.
+> #### ⚠️ Caution: Bumpy analogy ahead
 
 Bojack hasn’t set up his personal development machine to allow incoming
 connections from the Internet. That means there’s a firewall and a NAT
