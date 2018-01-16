@@ -449,7 +449,7 @@
     position: relative;
     padding: 1rem;
     background-color: #fff;
-    border: 1px solid #4e3107;
+    border: 1px solid #222;
     border-right-width: 1.5rem;
     @include fontface(serif);
     color: #444;
@@ -568,7 +568,7 @@
 
   @include mobile-only {
     line-height: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     @include highlight(#18682a);
     border-radius: 0.25rem;
   }
@@ -665,8 +665,7 @@
   .tailor__button {
     padding: .35rem;
     margin: 0 .25rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    font-family: "Source Sans Pro", sans-serif;
     border: none;
     border-bottom: 1px solid #b58900;
     border-radius: 4px;

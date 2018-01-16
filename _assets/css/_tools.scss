@@ -29,24 +29,23 @@
    ========================================= */
 
 @mixin fontface($face: $default_font_face) {
-  @if $face == sans-serif { font-family: "Roboto", sans-serif; }
-  @else if $face == serif { font-family: "Roboto Slab", Georgia, serif }
-  @else if $face == monospace { font-family: "Roboto Mono", monospace; }
+  @if $face == sans-serif { font-family: "Source Sans Pro", sans-serif; }
+  @else if $face == serif { font-family: "Source Serif Pro", Georgia, serif }
+  @else if $face == monospace { font-family: "Source Code Pro", monospace; }
 }
 
 @mixin fontweight($weight: normal, $face: $default_font_face, $color: default) {
   @if $weight == normal {
     @if $color == default { color: #666; }
     @else { color: $color; }
-    @if $face == sans-serif or $face == serif { font-weight: 300; }
+    @if $face == sans-serif { font-weight: 300; }
     @else { font-weight: normal; }
   }
 
   @else if $weight == bold {
     @if $color == default { color: #555; }
     @else { color: $color; }
-    @if $face == sans-serif { font-weight: 500; }
-    @else if $face == serif { font-weight: 400; }
+    @if $face == sans-serif or $face == serif { font-weight: 600; }
     @else { font-weight: bold; }
   }
 }

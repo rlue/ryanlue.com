@@ -10,6 +10,8 @@ body {
   @include fontweight;
   overflow-wrap: break-word; // force wider-than-viewport words to break
   line-height: 1.5;
+
+  font-size: 18px;
 }
 
 h1 { @include heading(2); }
