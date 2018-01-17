@@ -17,9 +17,9 @@ reddit_post: 'https://www.reddit.com/r/linux/comments/7qrtu2/security_is_hard_a_
 > It comes with a lot of nifty features, like a web interface for you to view
 > the shared session in your browser.
 >
-> Unfortunately, it looks like the project hasn’t been touched in almost two
-> years. No reason it won’t get the job done, though, and it’ll save you loads
-> of time over reading through this mess.
+> Unfortunately, it looks like the project has hardly been touched for almost
+> two years. No reason it won’t get the job done, though, and it’ll save you
+> loads of time over reading through this mess.
 
 [tmate]: https://tmate.io/
 
