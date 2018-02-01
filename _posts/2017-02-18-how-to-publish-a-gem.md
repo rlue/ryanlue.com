@@ -32,7 +32,7 @@ or invoke it from a Ruby file
 
 ~~~ ruby
 require 'pry'
-Binding.pry
+binding.pry
 ~~~
 
 without having to know how any of it came to be. It Just Works.
