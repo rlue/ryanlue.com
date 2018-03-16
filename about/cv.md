@@ -31,11 +31,11 @@ Projects
 
   Put your CTA in front of any third-party site whenever you share a link. Built with Rails + Vue.js + Foundation. Deployed with Semaphore + Heroku.
 
-  Responsible for preparing a comprehensive **unit and integration test suite** in RSpec. Implemented premium features for paid users. Extensively **documented internal API** with YARD.
+  Prepared a comprehensive **unit and integration test suite** in RSpec. Implemented premium features for paid users. Extensively **documented internal API** with YARD.
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Bodega][bdg]{:target="_blank"}:</span> A supply chain management tool for wholesalers.
+  <span class="projects__name">[Bodega][bdg]{:target="_blank"}:</span> A resource distribution management tool for chain restaurants.
 
   Made for a local restaurant chain to facilitate logistics and provide automated reports for accounting. Built with Rails (**MVC** / **relational database design** / **RESTful architecture**).
 
@@ -43,18 +43,7 @@ Projects
 
   <span class="projects__name">[Marshmallows][msh]{:target="_blank"}:</span> A personal finance app for tracking CD accounts.
 
-  Demo app built with Rails. **Three-tiered user authorization scheme**. Responsive design with Bootstrap. **RESTful JSON API** with token authentication.
-
-### Ruby Gems
-{: .projects__section }
-
-* <div class="projects__role projects__role--creator">Creator</div>
-
-  <span class="projects__name">[Something Like That][slt]{:target="_blank"}:</span> A fuzzy string matcher for long, multi-word phrases.
-
-  Most fuzzy string matchers use algorithms suited to comparing _individual terms._ SLT uses <dfn>Monge-Elkan</dfn>, a two-stage process designed specifically for _multi-word phrases_ ([Jimenez et al. 2009][mem]{:target="_blank"}).
-  
-  Good for **ranking search results collected from diverse sources**.
+  Demo app built with Rails + Bootstrap. **RESTful JSON API** with token authentication.
 
 ### Vim Plugins
 {: .projects__section }
@@ -64,6 +53,16 @@ Projects
   <span class="projects__name">[Getting Things Down][gtd]{:target="_blank"}:</span> Outlining and TODO shortcuts for GTD in Markdown.
 
   Provides automatic text folding, TODO highlighting, and per-section progress indicators for tracking productivity in plain text files using the Markdown format.
+
+Praise for Technical Writing
+----------------------------
+
+* [@wilson says](https://github.com/rbenv/ruby-build/pull/1114): “+300, this is a fantastic diff. As soon as a maintainer notices, I hope it gets merged.”
+  <div class="print-only"><small>(via https://github.com/rbenv/ruby-build/pull/1114)</small></div>
+* [@DirtyF says](https://github.com/jekyll/jekyll/pull/5912): “Much clearer indeed, thanks for this useful addition to the docs ✍️”
+  <div class="print-only"><small>(via https://github.com/jekyll/jekyll/pull/5912)</small></div>
+* [/u/frickenate says](https://www.reddit.com/comments/6k8nw3/_/dqf6h2f/) : “Thank you so bloody much... Your guide was perfect.”
+  <div class="print-only"><small>(via https://www.reddit.com/comments/6k8nw3/_/dqf6h2f/)</small></div>
 
 Skills
 ------
@@ -86,17 +85,6 @@ Work History
   * Communicated task progress and project status daily via Slack.
   * Met with founder weekly to discuss product direction.
 
-### International Marketing Associate
-{: .work-history__position }
-
-* <div class="work-history__tenure">2015-2016</div>
-  [奇想生活 THAT! Inventions][that]{:target="_blank"}
-
-  * Crafted marketing language to support boutique kitchenware brand identity.
-  * Supported international distributors in adopting our ecommerce platform.
-  * Translated critical sales presentations from Chinese into English.
-  * Set up and monitored analytics for a [successful Kickstarter
-  campaign][freez]{:target="_blank"}.
 
 Education
 ---------
@@ -151,8 +139,7 @@ Contact.patchButtons('nameplate__phone');
 [gh]: https://github.com/rlue/
 [blvd]: https://bulavard.com/
 [msh]: https://desolate-brushlands-25174.herokuapp.com/
-[bdg]: https://bodega.ryanlue.com/
-[slt]: https://github.com/rlue/something_like_that
+[bdg]: https://github.com/rlue/bodega
 [mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
 [gtd]: https://github.com/rlue/vim-getting-things-down
 [spr]: https://github.com/rlue/spore

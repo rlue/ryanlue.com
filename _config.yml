@@ -31,30 +31,35 @@ nav_menu:
 
 projects:
   - title: Bodega
-    teaser: A supply chain management tool for wholesalers.
-    url: https://bodega.ryanlue.com/
-    role: Creator
+    teaser: A resource distribution management tool for chain restaurants.
+    url: https://github.com/rlue/bodega
+    role: Owner
     category: Rails App
-  - title: Getting Things Down
-    teaser: Outlining and TODO shortcuts for GTD in plain ol' Markdown.
-    url: https://github.com/rlue/vim-getting-things-down
-    role: Creator
-    category: Vim Plugin
+  - title: Marshmallows
+    teaser: A resource distribution management tool for chain restaurants.
+    url: https://desolate-brushlands-25174.herokuapp.com/
+    role: Owner
+    category: Rails App
   - title: Solana
     teaser: The theme for this site. A responsive template written in vanilla Sass and JavaScript.
     url: https://github.com/rlue/jekyll-solana
-    role: Creator
-    category: Frontend Dev
-  - title: Something Like That
-    teaser: A Ruby library for fuzzy string matching of long, multi-word phrases.
-    url: https://github.com/rlue/something_like_that
-    role: Creator
-    category: Gems
+    role: Owner
+    category: CSS/Design
   - title: Timer
     teaser: A command-line pomodoro/interval timer.
     url: https://github.com/rlue/timer
-    role: Creator
+    role: Owner
     category: Bash Scripts
+  - title: Getting Things Down
+    teaser: Outlining and TODO shortcuts for GTD in plain ol' Markdown.
+    url: https://github.com/rlue/vim-getting-things-down
+    role: Owner
+    category: Vim Plugin
+  - title: Barbaric
+    teaser: Automatic input method switching for vim.
+    url: https://github.com/rlue/vim-barbaric
+    role: Owner
+    category: Vim Plugin
 
 #################
 # Site Settings #

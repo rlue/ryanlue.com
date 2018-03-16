@@ -50,7 +50,7 @@ a {
 }
 
 li {
-margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 dfn {
@@ -187,6 +187,12 @@ dfn {
   }
 }
 
+.print-only {
+  @media screen {
+    display: none;
+  }
+}
+
 .projects__section + ul {
   @extend %featured_list;
 }
@@ -223,6 +229,15 @@ dfn {
       position: absolute;
       left: -2rem;
     }
+  }
+}
+
+#praise-for-technical-writing + ul {
+  list-style: none;
+  padding: 0;
+
+  > li > div {
+    text-align: right;
   }
 }
 
