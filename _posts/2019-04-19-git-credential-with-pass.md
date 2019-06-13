@@ -6,7 +6,7 @@ tags: [git, cli, foss, pgp, security]
 ---
 
 I just stumbled upon [an absolutely fantastic, couldn’t-be-simpler tutorial
-for _git send-email_][]. It really tickled the old-school, lo-fi geek in me to
+for _git send-email_][]{:target="_blank"}. It really tickled the old-school, lo-fi geek in me to
 see git’s email workflow in action, and it only took a couple minutes—the
 developer’s equivalent of a cigarette break, really.
 
@@ -17,7 +17,7 @@ absolutely refused to postpone this problem until I actually needed a solution
 
 ### Context
 
-I use [Pass][] to manage my passwords. I know every modern desktop has its own
+I use [Pass][]{:target="_blank"} to manage my passwords. I know every modern desktop has its own
 credentials manager (OS X Keychain, gnome-keyring, kwallet), but I prefer Pass
 for its simplicity, portability, and adherence to the UNIX philosophy (it
 stores passwords as GPG-encrypted plaintext files in your home directory). The
@@ -41,7 +41,7 @@ password=password
 
 But for the life of me, I couldn’t figure out how to extend this pattern to
 _git send-email_ authentication, and the official docs for
-[`git-send-email`][] and [`git-credential`][] were not much help.
+[`git-send-email`][]{:target="_blank"} and [`git-credential`][]{:target="_blank"} were not much help.
 
 ### The solution
 
@@ -79,7 +79,7 @@ already gives the username.)
 [^1]:
 
     If you’re using two-factor authentication, you’ll want to generate a
-    [“personal access token” (GitHub)][] or [“app password” (Gmail)][] first
+    [“personal access token” (GitHub)][]{:target="_blank"} or [“app password” (Gmail)][]{:target="_blank"} first
     and use that instead of your actual password here.
 
 [^2]:

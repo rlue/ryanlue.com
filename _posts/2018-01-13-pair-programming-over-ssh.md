@@ -9,7 +9,7 @@ reddit_post: 'https://www.reddit.com/r/linux/comments/7qrtu2/security_is_hard_a_
 > ### Edit: Late to the Party
 >
 > Looks like I wasn’t the first one to come up with this idea. Some bright
-> folks over on reddit have pointed out [tmate][], a fork of tmux
+> folks over on reddit have pointed out [tmate][]{:target="_blank"}, a fork of tmux
 > purpose-built to facilitate precisely the same process described in this
 > guide (and with far more sophisticated security measures, from the looks of
 > it).
@@ -41,7 +41,7 @@ Why?
 ----
 
 At the time of this writing, the hottest tool for remote pairing appears to be
-**[Floobits][]**, while the easiest is **screenshare or remote desktop**
+**[Floobits][]{:target="_blank"}**, while the easiest is **screenshare or remote desktop**
 (_e.g.,_ ScreenHero). So why would you choose ssh + tmux over these guys?
 
 * It’s free (beer, speech, whatever — no third-party services required).
@@ -53,7 +53,7 @@ On the other hand...
 
 * It’s more work to set up.
 * Obviously, you’re constrained to the terminal. That means:
-  * you’re stuck with **vim or emacs** and [Unix as IDE][];
+  * you’re stuck with **vim or emacs** and [Unix as IDE][]{:target="_blank"};
   * communication must be handled separately; and
   * sharing of GUI windows (_e.g.,_ the browser) must be handled separately.
 * It’s easy to get the security implementation wrong.
@@ -123,7 +123,7 @@ anything _stupid._ Let’s make a new user account for him.
 Except tmux isn’t a multi-user program by default (and for good reason — it’d
 be like `su <user>` without a password prompt). Which means now that he has
 his own account, Todd won’t be able to `tmux attach` to Bojack’s session
-anymore.  Luckily, someone has already written a bash script called [wemux][]
+anymore.  Luckily, someone has already written a bash script called [wemux][]{:target="_blank"}
 to solve just this problem.
 
 If we _really_ don’t trust Todd, we can consign him to a **read-only** tmux
@@ -284,7 +284,7 @@ Step by Step, This Time
 
 If you don’t have tmux already, get it.
 
-In fact, get [wemux][] <span class="tailored__vps--no">and [ngrok][]</span>
+In fact, get [wemux][]{:target="_blank"} <span class="tailored__vps--no">and [ngrok][]{:target="_blank"}</span>
 while you’re at it.
 
 #### Enable SSH login
@@ -693,7 +693,7 @@ into your [ngrok configuration](https://ngrok.com/docs).)</span>
     #### SSH jail
 
     Setting up a chroot jail on the `pair` account is probably not a bad idea,
-    but it’s a lot of work. [jailkit][] can simplify the process, but there’s
+    but it’s a lot of work. [jailkit][]{:target="_blank"} can simplify the process, but there’s
     not a lot of high-level documentation, and [it raises a perplexing error on
     macOS](https://superuser.com/questions/1284808/).
 

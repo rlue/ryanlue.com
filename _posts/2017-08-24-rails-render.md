@@ -5,7 +5,7 @@ category: fundamentals
 tags: [rails]
 ---
 
-Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (search query: `site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search].
+Whenever I want to dig deeper into how Rails works, the official documentation is always the first place I go (search query: `site:api.rubyonrails.org %s`). It’s remarkably comprehensive, so I was surprised to discover that information about the `render` method is [actually quite fragmented][search]{:target="_blank"}.
 
 This is especially confusing because `render` is used both in controllers and in view templates, and serves related (but wholly different) purposes in each. While there are multiple pages describing what `render` does in different contexts, there is no single document outlining the overall scope of where and how it can be used. This post is an attempt to address this deficiency and cover the two main purposes of `render` in broad strokes.
 
@@ -80,7 +80,7 @@ will redirect to a new URL (whatever is routed to `books#show` for the new `@boo
 > 
 > Follow this footnote for the answer.[^1]
 
-Note that the `#create` action does not have a view of its own to render. [As the documentation states][render_docs] (emphasis mine),
+Note that the `#create` action does not have a view of its own to render. [As the documentation states][render_docs]{:target="_blank"} (emphasis mine),
 
 > These two methods [`render` and `redirect_to`] represent the two basic action archetypes used in Action Controllers: **Get-and-show** and **do-and-redirect**. Most actions are variations on these themes.
 
@@ -118,7 +118,7 @@ But if you’re `render`ing a template, you’ll wind up seeing the flash messag
 
 ### In view templates
 
-On the other hand, when used in view templates, `render` is for incorporating **partials**. For this use case, [the official documentation is more than ample][partials], but the upshot is this:
+On the other hand, when used in view templates, `render` is for incorporating **partials**. For this use case, [the official documentation is more than ample][partials]{:target="_blank"}, but the upshot is this:
 
 * You can create **partial view template** files to be inserted into your standard templates (think of them as modular page components).
 * Filenames of partials must begin with an underscore (_e.g.,_ `_nav.html.erb`).

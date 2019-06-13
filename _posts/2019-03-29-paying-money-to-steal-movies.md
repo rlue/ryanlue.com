@@ -45,7 +45,7 @@ But what we’ve gained in access, we’ve lost in ownership:
 $5 may get you more music than you could dream of for 30 days,
 but cancel your subscription and the tap turns right off.
 And what we’ve gained in discovery, we’ve lost in heritage:
-[Netflix offers just thirty titles from the 1970s][],
+[Netflix offers just thirty titles from the 1970s][]{:target="_blank"},
 and surely fewer the further back you go.
 
 So if ownership or heritage matter to you,
@@ -81,7 +81,7 @@ to step up your piracy game, read on.
 
 * **What provider should I go with?**
 
-  Check out the recommendations on [/r/seedboxes][].
+  Check out the recommendations on [/r/seedboxes][]{:target="_blank"}.
 
 * **Why can’t I just use my own computer instead?**
 
@@ -115,7 +115,7 @@ But you’re paying for a seedbox now, so you can do better.
 
 ### The New Way
 
-Say hello to [Sonarr][]:
+Say hello to [Sonarr][]{:target="_blank"}:
 
 <video width="100%" controls>
   <source src="/i/piracy-sonarr.webm" type="video/webm" />
@@ -149,8 +149,8 @@ and what files you have on your hard drive.
 This takes some getting used to,
 but it’s where the power and utility of Sonarr really lie.
 
-One tiny catch: Sonarr is only for TV shows. For movies, there’s [Radarr][]; for
-music, [Lidarr][].[^3] Triple the setup, triple the fun!
+One tiny catch: Sonarr is only for TV shows. For movies, there’s [Radarr][]{:target="_blank"}; for
+music, [Lidarr][]{:target="_blank"}.[^3] Triple the setup, triple the fun!
 
 ## Step 3: Stream Movies/Music off of It (Freemium)
 
@@ -164,7 +164,7 @@ it’s time to _enjoy_ it. For that, I use Plex:
 
 Plex is a commercial streaming service where it’s your job to run the server.
 With it, you can stream videos and music directly from your seedbox to your
-browser, phone, Chromecast, AppleTV, PlayStation, and [much more][].
+browser, phone, Chromecast, AppleTV, PlayStation, and [much more][]{:target="_blank"}.
 
 Bear in mind that as a commercial service, if Plex goes under,
 the party’s over and you’ll have to find another solution.
@@ -174,7 +174,7 @@ and uses _their_ hardware to serve the client app.
 
 Set it up on your seedbox, create an account at <https://plex.tv>, and go to town.
 At the time of this writing, it’s free to use,
-but $5/mo. will buy you multi-user accounts and [a bunch of other features][].
+but $5/mo. will buy you multi-user accounts and [a bunch of other features][]{:target="_blank"}.
 
 On a sufficiently powerful machine (that includes most seedboxes),
 it will transcode videos on the fly, adapting the quality to cope with bandwidth limitations.
@@ -227,15 +227,15 @@ Thanks for reading!
     Sonarr requires a good bit of configuration to know where to look for torrents,
     and that’s a whole other rabbit hole.
     Strictly speaking, Sonarr was not made for searching for torrents;
-    it was made for monitoring releases on [usenet newsgroups][].
+    it was made for monitoring releases on [usenet newsgroups][]{:target="_blank"}.
 
     In order for it to check for new releases,
     it has to be configured to follow some kind of feed
     (or _indexer,_ as it’s called in Sonarr)—traditionally a newsgroup,
-    or a [private tracker’s][] RSS feed.
+    or a [private tracker’s][]{:target="_blank"} RSS feed.
 
     In order for it to search across an entire BitTorrent tracker
-    (like the Pirate Bay), you need [Jackett][].
+    (like the Pirate Bay), you need [Jackett][]{:target="_blank"}.
 
     Since Sonarr is built to watch for releases and grab them automatically,
     you have to be careful about the quality restrictions you set
