@@ -252,6 +252,17 @@ Congratulations! In just a few minutes, you should see your new gem on RubyGems.
 
 Thanks for your contribution. Developers like you are what make this vibrant community possible. If you found this guide useful, drop me a line – I’d love to hear about the gem you created with it.
 
+Addendum: Workflow Automation with `hoe`
+----------------------------------------
+
+_Editor’s note: The following section was added on 12 September 2019._
+
+If you make a habit of releasing and updating gems, you’ll eventually discover that a lot of the work involved is tedious and repetitive. Fortunately for you, you won’t have been the first to notice.
+
+As with nearly everything else in software development, someone older and smarter than you has suffered the same pain (to a far greater degree) and built some tooling to make it disappear. An added benefit of this tooling is that once it has established itself as a norm in its particular development community, it becomes a way of encoding best practices about the problem it solves.
+
+In the case of releasing Ruby gems, one of the oldest and best-known is [hoe](http://www.zenspider.com/projects/hoe.html). Check out the [Hoe Developer’s Guide](http://yukimotopress.github.io/gem-tasks) by Ryan Davis, the author of hoe, to learn more.
+
 ---
 
 [^1]:
