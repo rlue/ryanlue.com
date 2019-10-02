@@ -30,16 +30,16 @@ nav_menu:
     icon: /i/icons.svg#email
 
 projects:
-  - title: Bodega
-    teaser: A resource distribution management tool for chain restaurants.
-    url: https://github.com/rlue/bodega
+  - title: Nelson Scandela
+    teaser: A barebones barcode generator.
+    url: https://github.com/rlue/nelson-scandela
     role: Owner
-    category: Rails App
+    category: Toy App (Sinatra)
   - title: Marshmallows
-    teaser: A resource distribution management tool for chain restaurants.
+    teaser: An interest calculator, with authentication and a JSON API.
     url: https://desolate-brushlands-25174.herokuapp.com/
     role: Owner
-    category: Rails App
+    category: Toy App (Rails)
   - title: Solana
     teaser: The theme for this site. A responsive template written in vanilla Sass and JavaScript.
     url: https://github.com/rlue/jekyll-solana
