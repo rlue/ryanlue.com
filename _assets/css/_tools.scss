@@ -30,7 +30,7 @@
 
 @mixin fontface($face: $default_font_face) {
   @if $face == sans-serif { font-family: "Source Sans Pro", sans-serif; }
-  @else if $face == serif { font-family: "Source Serif Pro", Georgia, serif }
+  @else if $face == serif { font-family: "Alegreya", Georgia, serif }
   @else if $face == monospace { font-family: "Source Code Pro", monospace; }
 }
 
