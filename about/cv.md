@@ -27,23 +27,17 @@ Projects
 
 * <div class="projects__role projects__role--core">Core Team</div>
 
+  <span class="projects__name">[Zammad][zmd]{:target="_blank"}:</span> An open-source customer helpdesk platform.
+
+  A unified inbox for all your customer correspondences, over any channel—email, telephone, live chat, Twitter, Facebook, Telegram, and more.
+
+  Packed with team-management and automation features. Built with Rails + CoffeeScript.
+
+* <div class="projects__role projects__role--core">Core Team</div>
+
   <span class="projects__name">[Bulavard][blvd]{:target="_blank"}:</span> A social media marketing utility.
 
   Put your CTA in front of any third-party site whenever you share a link. Built with Rails + Vue.js + Foundation. Deployed with Semaphore + Heroku.
-
-  Prepared a comprehensive **unit and integration test suite** in RSpec. Implemented premium features for paid users. Extensively **documented internal API** with YARD.
-
-* <div class="projects__role projects__role--creator">Creator</div>
-
-  <span class="projects__name">[Bodega][bdg]{:target="_blank"}:</span> A resource distribution management tool for chain restaurants.
-
-  Made for a local restaurant chain to facilitate logistics and provide automated reports for accounting. Built with Rails (**MVC** / **relational database design** / **RESTful architecture**).
-
-* <div class="projects__role projects__role--creator">Creator</div>
-
-  <span class="projects__name">[Marshmallows][msh]{:target="_blank"}:</span> A personal finance app for tracking CD accounts.
-
-  Demo app built with Rails + Bootstrap. **RESTful JSON API** with token authentication.
 
 ### Vim Plugins
 {: .projects__section }
@@ -68,8 +62,9 @@ Skills
 ------
 
 * <span class="skills__list-marker">💬</span> Technical communication  
-* <span class="skills__list-marker">🖥️</span> Ruby / Rails / RSpec
-* <span class="skills__list-marker">🖥️</span> HTML / CSS / JavaScript (ES6)
+* <span class="skills__list-marker">🖥️</span> Ruby / Rails / Roda / RSpec
+* <span class="skills__list-marker">🖥️</span> React / JavaScript (ES6) /
+HTML / CSS 
 * <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
 * <span class="skills__list-marker">🖥️</span> Git
 
@@ -79,11 +74,20 @@ Work History
 ### Full-Stack Developer
 {: .work-history__position }
 
+* <div class="work-history__tenure">2018–Present</div>
+  [Zammad GmbH][zmd]{:target="_blank"}
+
+  * **Migrated a large test suite** from Minitest to RSpec.
+  * Added test coverage for previously-untested core business logic.
+  * Undertook **major refactorings** to eliminate incidental complexity.
+  * Authored & edited official docs, internal literature, and marketing copy.
+
 * <div class="work-history__tenure">2017</div>
   [Bulavard, Inc.][blvd]{:target="_blank"}
 
-  * Communicated task progress and project status daily via Slack.
-  * Met with founder weekly to discuss product direction.
+  * Prepared a comprehensive **unit and integration test suite** in RSpec.
+  * Implemented premium features for paid users.
+  * Extensively **documented internal API** with YARD.
 
 
 Education
@@ -137,9 +141,9 @@ Contact.patchButtons('nameplate__phone');
 </script>
 
 [gh]: https://github.com/rlue/
+[zmd]: https://zammad.org/
 [blvd]: https://bulavard.com/
 [msh]: https://desolate-brushlands-25174.herokuapp.com/
-[bdg]: https://github.com/rlue/bodega
 [mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
 [gtd]: https://github.com/rlue/vim-getting-things-down
 [spr]: https://github.com/rlue/spore
