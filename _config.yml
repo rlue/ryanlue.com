@@ -67,8 +67,6 @@ projects:
 
 incremental: true
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - LICENSE
   - README.md
   - TODO.md

@@ -395,10 +395,10 @@
 .posts__heading {
   border: none;
 
+  @extend %banner__wrapper;
+  @extend %banner__title;
   @include tablet-portrait-up {
-    @extend %banner__wrapper;
     top: 9rem;
-    @extend %banner__title;
   }
 }
 
