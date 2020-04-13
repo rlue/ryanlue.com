@@ -2,7 +2,7 @@
 title: What Happens When Variables Point to Each Other?
 teaser: A look at object mutability & ‘pass by reference’ vs. ‘pass by value’, and how they affect the behavior of variables in Ruby.
 category: fundamentals
-tags: [ruby]
+tags: [ruby, language-internals]
 ---
 
 In programming, [conciseness is a virtue][sip]{:target="_blank"}. But back when I was first learning to program in Ruby (which was not all that long ago), I would occasionally discover that the concisest way of doing something was not actually the correct way to do it – that, due to some unforeseen aspect of the language’s design, I would try to simplify a set of instructions and wind up with something entirely different from what I had intended. 
