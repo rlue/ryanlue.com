@@ -5,7 +5,9 @@ category: recaps
 tags: [javascript, language-internals]
 ---
 
-From <https://perfectionkills.com/understanding-delete/> by Juriy Zaytsev (2010)
+From [_Understanding Delete_][] by Juriy Zaytsev (2010)
+
+---
 
 `delete` is a built-in JS operator for **removing properties from objects**:
 
@@ -88,5 +90,6 @@ Presumably, the author was using Firebug to confirm his findings. Firebug runs
 all code in an `eval` execution context, where even more inconsistencies
 abound!
 
+[Understanding Delete]: https://perfectionkills.com/understanding-delete/
 [excons]: https://www.youtube.com/watch?v=Nt-qa_LlUH0
 [tmg]: https://tylermcginnis.com/courses/advanced-javascript/

@@ -5,7 +5,12 @@ category: recaps
 tags: [css]
 ---
 
-From <http://nicolasgallagher.com/about-html-semantics-front-end-architecture/> by Nicolas Gallagher (2012)
+From [_About HTML semantics and front-end architecture_][] by Nicolas Gallagher (2012).
+Nicolas Gallagher’s post was an inspiration for Adam Wathan’s
+[_CSS Utility Classes and “Separation of Concerns”_][],
+which in turn introduced [tailwindcss][].
+
+---
 
 HTML5 introduced the concept of **semantic markup**, including descriptive
 element names (`<article>`), attributes (`<input list="...">`), and microdata
@@ -25,9 +30,10 @@ only to be meaningless and redundant, but to make it really difficult to
 manage and extract meaningful patterns in a page’s CSS:
 
 ```html
-<div class="news">
-    <h2>News</h2>
-    ...
+<div class="news">         <!-- “news” is a CONTENT-BASED class name -->
+  <h2>News</h2>
+  <ul class="media-list">  <!-- “media-list” is a PRESENTATIONAL class name -->
+  ...
 </div>
 ```
 
@@ -91,12 +97,19 @@ His main points are:
   The development benefits of a little duplication in your raw code will far
   outweigh the performance benefits of the few KB you save after compression.
 
-Nicolas Gallagher’s post was an inspiration
-for Adam Wathan’s [CSS Utility Classes and “Separation of Concerns”][],
-which in turn introduced [tailwindcss][].
+At first blush, it might seem as if this piece is outdated,
+and that newly-established practices in the frontend ecosystem
+(_e.g.,_ CSS Modules and styled components)
+have rendered the analysis obsolete.
+But Nicolas Gallagher’s point is less about naming and namespacing,
+and more about organization and taxonomy:
+which rules belong together, and according to what organizational principle?
 
+In the end, no amount of tooling can replace a good mental model.
+
+[About HTML semantics and front-end architecture]: http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
+[CSS Utility Classes and “Separation of Concerns”]: https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
+[tailwindcss]: https://tailwindcss.com/
 [`itemscope`]: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/itemscope
 [applying this principle to class names]: http://dev.w3.org/html5/spec/global-attributes.html#classes
 [CSS Zen Garden]: http://www.csszengarden.com/
-[CSS Utility Classes and “Separation of Concerns”]: https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
-[tailwindcss]: https://tailwindcss.com/
