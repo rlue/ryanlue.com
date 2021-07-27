@@ -12,41 +12,86 @@ stylesheet: /about/cv.css
 
   <ul class="nameplate__contact">
     <li><span class="nameplate__contact-list-marker">🌏</span> <a href="http://ryanlue.com/" target="_blank" class="nameplate__blog">ryanlue.com</a></li>
-    <li><span class="nameplate__contact-list-marker">🇹🇼</span> Taipei, Taiwan</li>
-    <li><span class="nameplate__contact-list-marker">🇺🇸</span> U.S. Citizen</li>
+    <li><span class="nameplate__contact-list-marker">🇺🇸</span> Los Angeles, CA</li>
     <li><span class="nameplate__contact-list-marker">📞</span> <a href="64865462651B2%A3%let" class="nameplate__phone">645-6846</a></li>
     <li class="nameplate__pdf-link"><span class="nameplate__contact-list-marker">📄</span> <a href="Ryan%20Lue%20(CV).pdf">Download as PDF</a></li>
   </ul>
 </header>
 
-Projects
---------
+Work History
+------------
 
-### Web Development
-{: .projects__section }
+### Full-Stack Developer
+{: .work-history__position }
 
-* <div class="projects__role projects__role--core">Core Team</div>
+* <div class="work-history__tenure">2020–Present</div>
+  University of Southern California
 
-  <span class="projects__name">[Zammad][zmd]{:target="_blank"}:</span> An open-source customer helpdesk platform.
+  [SDAQS][] (“Source-Differentiated Air Quality System”): Look up historical air contaminant levels at U.S. military bases throughout the Middle East.
+
+  Built for a [federal grant funded by NASA][] using Roda + React + Mapbox GL + Tailwind CSS.
+
+  * Designed UI for single-page map application, supported by periodic design feedback sessions with the client.
+  * Constructed a simple API to connect the frontend to a client-provided dataset.
+  * Deployed self-hosted staging server using **Docker + traefik**.
+  * Bundled the application into a Docker image for easy deployment by the client on private networks.
+
+* <div class="work-history__tenure">2018–2020</div>
+  [Zammad GmbH][]{:target="_blank"}
 
   A unified inbox for all your customer correspondences, over any channel—email, telephone, live chat, Twitter, Facebook, Telegram, and more.
 
   Packed with team-management and automation features. Built with Rails + CoffeeScript.
 
-* <div class="projects__role projects__role--core">Core Team</div>
+  * **Migrated a large test suite** from Minitest to RSpec.
+  * Added test coverage for previously-untested core business logic.
+  * Undertook **major refactorings** to eliminate incidental complexity.
+  * Authored & edited official docs, internal literature, and marketing copy.
 
-  <span class="projects__name">[Bulavard][blvd]{:target="_blank"}:</span> A social media marketing utility.
+* <div class="work-history__tenure">2017</div>
+  Bulavard, Inc.
 
   Put your CTA in front of any third-party site whenever you share a link. Built with Rails + Vue.js + Foundation. Deployed with Semaphore + Heroku.
+
+  * Prepared a comprehensive **unit and integration test suite** in RSpec.
+  * Implemented premium features for paid users.
+  * Extensively **documented internal API** with YARD.
+
+Side Projects
+-------------
+
+### JavaScript Libraries
+{: .projects__section }
+
+* <div class="projects__role projects__role--contributor">Contributor</div>
+
+  <span class="projects__name">[flatpickr][]{:target="_blank"}:</span> Lightweight, powerful datetime picker
+
+  [Discovered and built out missing functionality][] in an official plug-in. Added test coverage around obscure UI bugs.
+
+### Linux Utilities
+{: .projects__section }
+
+* <div class="projects__role projects__role--creator">Creator</div>
+
+  <span class="projects__name">[Xferase][]{:target="_blank"}:</span> Always-on, fully-automated photo import utility
+
+  Part of a self-hosted / DIY alternative to cloud photo services like Google Photos or iCloud.
+
+* <div class="projects__role projects__role--creator">Creator</div>
+
+  <span class="projects__name">[Cram][]{:target="_blank"}:</span> An extensible toolkit for automating Anki flash card creation
+
+  Studying with Anki? Build “notes” (flash cards) faster with cram. Currently only includes tools for studying Traditional Chinese.
 
 ### Vim Plugins
 {: .projects__section }
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Getting Things Down][gtd]{:target="_blank"}:</span> Outlining and TODO shortcuts for GTD in Markdown.
+  <span class="projects__name">[Barbaric][]{:target="_blank"}:</span> Automatic input method switching
 
-  Provides automatic text folding, TODO highlighting, and per-section progress indicators for tracking productivity in plain text files using the Markdown format.
+  vim + non-Latin input = pain. Barbaric is the cure. (⭐ 100+ stars on GitHub!)
 
 Praise for Technical Writing
 ----------------------------
@@ -68,53 +113,12 @@ HTML / CSS
 * <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
 * <span class="skills__list-marker">🖥️</span> Git
 
-Work History
-------------
-
-### Full-Stack Developer
-{: .work-history__position }
-
-* <div class="work-history__tenure">2018–Present</div>
-  [Zammad GmbH][zmd]{:target="_blank"}
-
-  * **Migrated a large test suite** from Minitest to RSpec.
-  * Added test coverage for previously-untested core business logic.
-  * Undertook **major refactorings** to eliminate incidental complexity.
-  * Authored & edited official docs, internal literature, and marketing copy.
-
-* <div class="work-history__tenure">2017</div>
-  [Bulavard, Inc.][blvd]{:target="_blank"}
-
-  * Prepared a comprehensive **unit and integration test suite** in RSpec.
-  * Implemented premium features for paid users.
-  * Extensively **documented internal API** with YARD.
-
-
 Education
 ---------
 
-### Online Courses
-
-* <div class="education__date">2017</div>
-
-  [Algorithms, Parts I & II][prin]{:target="_blank"}
-  <span class="education__institution">Princeton University, via Coursera</span>
-
-* <div class="education__date">2016</div>
-
-  [Agile Development Using Ruby on Rails][berk]{:target="_blank"}
-  <span class="education__institution">UC Berkeley, via edX</span>
-
-* <div class="education__date">2015</div>
-
-  [Introduction to Computer Networking][stan]{:target="_blank"}
-  <span class="education__institution">Stanford University, via Lagunita</span>
-
-### Formal Degrees
-
 * <div class="education__date">2010</div>
 
-  Bachelor of Arts in Urban Studies and Planning
+  B.A., Urban Studies and Planning
   <span class="education__institution">UC San Diego</span>
 
 <script type="text/javascript">
@@ -140,15 +144,11 @@ Contact.patchButtons('nameplate__email');
 Contact.patchButtons('nameplate__phone');
 </script>
 
-[gh]: https://github.com/rlue/
-[zmd]: https://zammad.org/
-[blvd]: https://bulavard.com/
-[msh]: https://desolate-brushlands-25174.herokuapp.com/
-[mem]: http://www.gelbukh.com/CV/Publications/2009/Generalized%20Mongue-Elkan%20Method%20for%20Approximate%20Text%20String.pdf
-[gtd]: https://github.com/rlue/vim-getting-things-down
-[spr]: https://github.com/rlue/spore
-[that]: https://thatinventions.com/
-[freez]: https://www.kickstarter.com/projects/that/freezthat-frozen-treats-in-a-flash
-[prin]: https://www.coursera.org/learn/algorithms-part1
-[stan]: https://lagunita.stanford.edu/courses/Engineering/Networking-SP/SelfPaced/info
-[berk]: https://courses.edx.org/courses/course-v1:BerkeleyX+CS169.1x+3T2015SP/info
+[flatpickr]: https://github.com/flatpickr/flatpickr
+[SDAQS]: https://github.com/rlue/sdaqs-sada
+[federal grant funded by NASA]: https://appliedsciences.nasa.gov/sites/default/files/2021-03/A10_Franklin_HAQ2019.pdf
+[Zammad GmbH]: https://zammad.org/
+[Discovered and built out missing functionality]: https://github.com/flatpickr/flatpickr/pull/2297
+[Xferase]: https://github.com/rlue/xferase
+[Cram]: https://github.com/rlue/cram
+[Barbaric]: https://github.com/rlue/vim-barbaric
