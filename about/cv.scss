@@ -34,6 +34,8 @@ header {
 h2 {
   margin-top: 2rem;
   border-bottom: 1px solid #333;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 a {
@@ -241,12 +243,22 @@ dfn {
   }
 }
 
+.work-history__note {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
 .work-history__position + ul {
   @extend %featured_list;
 
   > li > ul {
     list-style-type: disc;
   }
+}
+
+.work-history__employer {
+  font-weight: bold;
+  font-size: 1.125rem;
 }
 
 .work-history__tenure {

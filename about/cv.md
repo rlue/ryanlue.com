@@ -14,51 +14,49 @@ stylesheet: /about/cv.css
     <li><span class="nameplate__contact-list-marker">🌏</span> <a href="http://ryanlue.com/" target="_blank" class="nameplate__blog">ryanlue.com</a></li>
     <li><span class="nameplate__contact-list-marker">🇺🇸</span> Los Angeles, CA</li>
     <li><span class="nameplate__contact-list-marker">📞</span> <a href="64865462651B2%A3%let" class="nameplate__phone">645-6846</a></li>
-    <li class="nameplate__pdf-link"><span class="nameplate__contact-list-marker">📄</span> <a href="Ryan%20Lue%20(CV).pdf">Download as PDF</a></li>
+    <li class="nameplate__pdf-link"><span class="nameplate__contact-list-marker">📄</span> <a href="cv.pdf">View as PDF</a></li>
   </ul>
 </header>
 
-Work History
-------------
+Selected Work History <span class="work-history__note">(5 years’ experience in all)</span>
+------------------------------------------------------------------------------------------
 
 ### Full-Stack Developer
 {: .work-history__position }
 
-* <div class="work-history__tenure">2020–Present</div>
-  University of Southern California
+* <div class="work-history__tenure">2020–2021</div>
+  <div class="work-history__employer">University of Southern California (Freelance)</div>
 
-  [SDAQS][] (“Source-Differentiated Air Quality System”): Look up historical air contaminant levels at U.S. military bases throughout the Middle East.
+  Part of an $800,000 NASA research grant, [_Source-Differentiated Air Quality System_][] reports air contaminant levels at military bases across the Middle East.
 
-  Built for a [federal grant funded by NASA][] using Roda + React + Mapbox GL + Tailwind CSS.
+  Built using Roda + React + Mapbox GL + Tailwind CSS.
 
-  * Designed UI for single-page map application, supported by periodic design feedback sessions with the client.
-  * Constructed a simple API to connect the frontend to a client-provided dataset.
-  * Deployed self-hosted staging server using **Docker + traefik**.
-  * Bundled the application into a Docker image for easy deployment by the client on private networks.
+  * Sole developer of a **single-page React app + REST API** for
+    summarizing data from a 200GB+ dataset.
+  * Achieved a **29% reduction in median response time** by replacing the
+    default web server.
+  * Deployed app to a self-hosted staging server using **Docker + traefik**.
+  * Conducted client design review meetings to refine functionality and UI.
+
+### Backend Developer
+{: .work-history__position }
 
 * <div class="work-history__tenure">2018–2020</div>
-  [Zammad GmbH][]{:target="_blank"}
+  <div class="work-history__employer">Zammad GmbH</div>
 
-  A unified inbox for all your customer correspondences, over any channel—email, telephone, live chat, Twitter, Facebook, Telegram, and more.
+  [Zammad][]{:target="blank"} is a unified inbox for all your customer correspondences, over any channel—email, telephone, live chat, Twitter, Facebook, Telegram, and more.
 
   Packed with team-management and automation features. Built with Rails + CoffeeScript.
 
-  * **Migrated a large test suite** from Minitest to RSpec.
-  * Added test coverage for previously-untested core business logic.
-  * Undertook **major refactorings** to eliminate incidental complexity.
-  * Authored & edited official docs, internal literature, and marketing copy.
+  * Manually **replaced 13,000+ lines of dense, messy, procedural test logic**
+    with descriptive, self-documenting specs.
+  * Undertook **broad-scoped, structural refactorings**; e.g., touching 150+ files in a single commit.
+  * Found opportunities for **narrow-scoped, logical refactorings**; e.g., reducing a 41-line method to just five lines (!).
+  * Reduced support team workload by rewriting official docs and Getting
+    Started guide; authored and edited internal literature and marketing copy.
 
-* <div class="work-history__tenure">2017</div>
-  Bulavard, Inc.
-
-  Put your CTA in front of any third-party site whenever you share a link. Built with Rails + Vue.js + Foundation. Deployed with Semaphore + Heroku.
-
-  * Prepared a comprehensive **unit and integration test suite** in RSpec.
-  * Implemented premium features for paid users.
-  * Extensively **documented internal API** with YARD.
-
-Side Projects
--------------
+Open-Source Projects
+--------------------
 
 ### JavaScript Libraries
 {: .projects__section }
@@ -74,15 +72,15 @@ Side Projects
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
-  <span class="projects__name">[Xferase][]{:target="_blank"}:</span> Always-on, fully-automated photo import utility
+  <span class="projects__name">[Xferase][]{:target="_blank"}:</span> Always-on, fully-automated photo import daemon
 
-  Part of a self-hosted / DIY alternative to cloud photo services like Google Photos or iCloud.
+  Part of a self-hosted alternative to cloud services like Google Photos or iCloud.
 
 * <div class="projects__role projects__role--creator">Creator</div>
 
   <span class="projects__name">[Cram][]{:target="_blank"}:</span> An extensible toolkit for automating Anki flash card creation
 
-  Studying with Anki? Build “notes” (flash cards) faster with cram. Currently only includes tools for studying Traditional Chinese.
+  Studying with Anki? Build “notes” (flash cards) faster with cram.
 
 ### Vim Plugins
 {: .projects__section }
@@ -91,7 +89,7 @@ Side Projects
 
   <span class="projects__name">[Barbaric][]{:target="_blank"}:</span> Automatic input method switching
 
-  vim + non-Latin input = pain. Barbaric is the cure. (⭐ 100+ stars on GitHub!)
+  vim + non-Latin input = pain. Barbaric is the cure. (⭐ 150+ stars on GitHub!)
 
 Praise for Technical Writing
 ----------------------------
@@ -106,12 +104,11 @@ Praise for Technical Writing
 Skills
 ------
 
-* <span class="skills__list-marker">💬</span> Technical communication  
 * <span class="skills__list-marker">🖥️</span> Ruby / Rails / Roda / RSpec
 * <span class="skills__list-marker">🖥️</span> React / JavaScript (ES6) /
 HTML / CSS 
 * <span class="skills__list-marker">🖥️</span> SQL / Relational Databases
-* <span class="skills__list-marker">🖥️</span> Git
+* <span class="skills__list-marker">🖥️</span> Linux system administration
 
 Education
 ---------
@@ -145,9 +142,8 @@ Contact.patchButtons('nameplate__phone');
 </script>
 
 [flatpickr]: https://github.com/flatpickr/flatpickr
-[SDAQS]: https://github.com/rlue/sdaqs-sada
-[federal grant funded by NASA]: https://appliedsciences.nasa.gov/sites/default/files/2021-03/A10_Franklin_HAQ2019.pdf
-[Zammad GmbH]: https://zammad.org/
+[_Source-Differentiated Air Quality System_]: https://github.com/rlue/sdaqs-sada
+[Zammad]: https://zammad.com
 [Discovered and built out missing functionality]: https://github.com/flatpickr/flatpickr/pull/2297
 [Xferase]: https://github.com/rlue/xferase
 [Cram]: https://github.com/rlue/cram
