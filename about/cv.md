@@ -46,12 +46,14 @@ Selected Work History <span class="work-history__note">(5 years’ experience in
 
   [Zammad][]{:target="blank"} is a unified inbox for all your customer correspondences, over any channel—email, telephone, live chat, Twitter, Facebook, Telegram, and more.
 
-  Packed with team-management and automation features. Built with Rails + CoffeeScript.
+  Hybrid open-source + SaaS model (700,000+ downloads / 1,200+ corporate subscribers). Built with Rails + CoffeeScript.
 
-  * Manually **replaced 13,000+ lines of dense, messy, procedural test logic**
-    with descriptive, self-documenting specs.
-  * Undertook **broad-scoped, structural refactorings**; e.g., touching 150+ files in a single commit.
-  * Found opportunities for **narrow-scoped, logical refactorings**; e.g., reducing a 41-line method to just five lines (!).
+  * Completed broad-scoped refactorings & migrations; _e.g.:_
+    * rewrote 13,000+ lines of dense, messy, procedural test logic
+      as **descriptive, self-documenting specs**.
+    * replaced home-rolled authentication logic (used in 150+ classes)
+      with a widely-used, commercially-sponsored open-source library.
+  * Conducted code review for pull requests from community contributors.
   * Reduced support team workload by rewriting official docs and Getting
     Started guide; authored and edited internal literature and marketing copy.
 
