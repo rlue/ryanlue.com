@@ -30,36 +30,31 @@ nav_menu:
     icon: /i/icons.svg#email
 
 projects:
-  - title: Nelson Scandela
-    teaser: A barebones barcode generator.
-    url: https://github.com/rlue/nelson-scandela
-    role: Owner
-    category: Toy App (Sinatra)
-  - title: Marshmallows
-    teaser: An interest calculator, with authentication and a JSON API.
-    url: https://desolate-brushlands-25174.herokuapp.com/
-    role: Owner
-    category: Toy App (Rails)
-  - title: Solana
-    teaser: The theme for this site. A responsive template written in vanilla Sass and JavaScript.
-    url: https://github.com/rlue/jekyll-solana
-    role: Owner
-    category: CSS/Design
   - title: Timer
-    teaser: A command-line pomodoro/interval timer.
+    teaser: A command-line pomodoro/interval timer
     url: https://github.com/rlue/timer
     role: Owner
-    category: Bash Scripts
-  - title: Getting Things Down
-    teaser: Outlining and TODO shortcuts for GTD in plain ol' Markdown.
-    url: https://github.com/rlue/vim-getting-things-down
-    role: Owner
-    category: Vim Plugin
+    category: CLI Utility
   - title: Barbaric
-    teaser: Automatic input method switching for vim.
+    teaser: Automatic input method switching for vim
     url: https://github.com/rlue/vim-barbaric
     role: Owner
     category: Vim Plugin
+  - title: Nelson Scandela
+    teaser: A barebones barcode generator
+    url: https://github.com/rlue/nelson-scandela
+    role: Owner
+    category: Toy App (Sinatra)
+  - title: xferase
+    teaser: Always-on, fully-automated photo import utility
+    url: https://github.com/rlue/xferase
+    role: Owner
+    category: CLI Utility
+  - title: Cram
+    teaser: A toolkit for automating Anki flashcard creation
+    url: https://github.com/rlue/cram
+    role: Owner
+    category: CLI Utility
 
 #################
 # Site Settings #
