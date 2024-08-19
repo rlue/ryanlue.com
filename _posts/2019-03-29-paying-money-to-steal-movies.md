@@ -1,6 +1,6 @@
 ---
 title: Paying Money to Steal Movies & Music on the Internet
-teaser: Using Plex, Sonarr, Radarr, and more for piracy in 2019.
+teaser: Using Jellyfin, Sonarr, Radarr, and more for piracy in 2019.
 category: guides
 tags: [multimedia, streaming, piracy, bittorrent]
 ---
@@ -152,49 +152,52 @@ but it’s where the power and utility of Sonarr really lie.
 One tiny catch: Sonarr is only for TV shows. For movies, there’s [Radarr][]{:target="_blank"}; for
 music, [Lidarr][]{:target="_blank"}.[^3] Triple the setup, triple the fun!
 
-## Step 3: Stream Movies/Music off of It (Freemium)
+## Step 3: Stream Movies/Music off of It ~~(Freemium)~~
 
-Now that you’ve got a system for _collecting_ your media,
-it’s time to _enjoy_ it. For that, I use Plex:
-
-<video width="100%" controls>
-  <source src="/i/piracy-plex.webm" type="video/webm" />
-  <source src="/i/piracy-plex.mp4" type="video/mp4" />
-</video>
-
-Plex is a commercial streaming service where it’s your job to run the server.
-With it, you can stream videos and music directly from your seedbox to your
-browser, phone, Chromecast, AppleTV, PlayStation, and [much more][]{:target="_blank"}.
-
-Bear in mind that as a commercial service, if Plex goes under,
-the party’s over and you’ll have to find another solution.
-Unlike Sonarr, where the app is served directly off of the seedbox,
-Plex only uses your hardware to serve the content,
-and uses _their_ hardware to serve the client app.
-
-Set it up on your seedbox, create an account at <https://plex.tv>, and go to town.
-At the time of this writing, it’s free to use,
-but $5/mo. will buy you multi-user accounts and [a bunch of other features][]{:target="_blank"}.
-
-On a sufficiently powerful machine (that includes most seedboxes),
-it will transcode videos on the fly, adapting the quality to cope with bandwidth limitations.
-The UI is still a generation or so behind Netflix & Spotify,
-but leaps and bounds ahead of anything else I’ve seen.
-
-Fair warning: it’s not without its flaws.
-I hate to say it, but I’ve been using it for about a month now,
-and I’ve run into a few very irritating issues:
-Sometimes, I’ll be playing an album on my iPhone,
-and it’ll play three seconds of one song before skipping to the next track.
-Sometimes, the playback meter will keep moving, but the audio will just stop entirely.
-Or I’ll be streaming a TV show to my Chromecast, and it’ll lag and stutter
-and won’t actually degrade the quality of the video to keep playback smooth.
-Some issues only seem to happen on the mobile client; others happen everywhere.
-
-For the moment, I’m prepared to chalk it up to the geographical limitations of
-streaming from a seedbox in Europe to a device in Asia,
-and am planning on setting up my own server at home
-in the hopes that that will fix it.
+> **Update Aug 2024:** I was never quite happy with the solution described in this section.
+> It’s kept here for posterity, but I abandoned Plex for [Jellyfin][] in late 2020 and have never looked back.
+>
+> Now that you’ve got a system for _collecting_ your media,
+> it’s time to _enjoy_ it. For that, I use Plex:
+>
+> <video width="100%" controls>
+>   <source src="/i/piracy-plex.webm" type="video/webm" />
+>   <source src="/i/piracy-plex.mp4" type="video/mp4" />
+> </video>
+>
+> Plex is a commercial streaming service where it’s your job to run the server.
+> With it, you can stream videos and music directly from your seedbox to your
+> browser, phone, Chromecast, AppleTV, PlayStation, and [much more][]{:target="_blank"}.
+>
+> Bear in mind that as a commercial service, if Plex goes under,
+> the party’s over and you’ll have to find another solution.
+> Unlike Sonarr, where the app is served directly off of the seedbox,
+> Plex only uses your hardware to serve the content,
+> and uses _their_ hardware to serve the client app.
+>
+> Set it up on your seedbox, create an account at <https://plex.tv>, and go to town.
+> At the time of this writing, it’s free to use,
+> but $5/mo. will buy you multi-user accounts and [a bunch of other features][]{:target="_blank"}.
+>
+> On a sufficiently powerful machine (that includes most seedboxes),
+> it will transcode videos on the fly, adapting the quality to cope with bandwidth limitations.
+> The UI is still a generation or so behind Netflix & Spotify,
+> but leaps and bounds ahead of anything else I’ve seen.
+>
+> Fair warning: it’s not without its flaws.
+> I hate to say it, but I’ve been using it for about a month now,
+> and I’ve run into a few very irritating issues:
+> Sometimes, I’ll be playing an album on my iPhone,
+> and it’ll play three seconds of one song before skipping to the next track.
+> Sometimes, the playback meter will keep moving, but the audio will just stop entirely.
+> Or I’ll be streaming a TV show to my Chromecast, and it’ll lag and stutter
+> and won’t actually degrade the quality of the video to keep playback smooth.
+> Some issues only seem to happen on the mobile client; others happen everywhere.
+>
+> For the moment, I’m prepared to chalk it up to the geographical limitations of
+> streaming from a seedbox in Europe to a device in Asia,
+> and am planning on setting up my own server at home
+> in the hopes that that will fix it.
 
 ## Wrapping up
 
@@ -202,7 +205,7 @@ That’s about all there is to it. To recap:
 
 1. Rent a seedbox;
 2. build your library with Sonarr/Radarr/Lidarr;
-3. stream your library with Plex.
+3. stream your library with ~~Plex~~ Jellyfin.
 
 (Or just stick with Netflix and Spotify. It’s your life.)
 
@@ -260,6 +263,7 @@ Thanks for reading!
 [Sonarr]: https://github.com/Sonarr/Sonarr
 [Radarr]: https://github.com/Radarr/Radarr
 [Lidarr]: https://github.com/lidarr/Lidarr
+[Jellyfin]: https://jellyfin.org
 [much more]: https://www.plex.tv/apps-devices/
 [a bunch of other features]: https://www.plex.tv/plex-pass/
 [usenet newsgroups]: https://reddit.com/r/usenet

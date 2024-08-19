@@ -2,6 +2,7 @@
 title: Protect Your Email Address from Harvesting Bots
 teaser: Is it still really relevant in 2017?
 category: problems
+hidden: true
 tags: [javascript, security, usability]
 ---
 

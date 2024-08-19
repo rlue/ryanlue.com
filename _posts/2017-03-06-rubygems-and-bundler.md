@@ -2,6 +2,7 @@
 title: RubyGems & Bundler in 2 Minutes
 teaser: What are they, and how do they fit together?
 category: programming-101
+hidden: true
 tags: [gems]
 ---
 

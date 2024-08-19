@@ -2,6 +2,7 @@
 title: 2 Vim Plugins for a Better Jekyll Experience
 teaser: Set up a live preview of your Jekyll site from Vim, and get multi-language syntax highlighting working right.
 category: tips
+hidden: true
 tags: [vim, jekyll, workflow]
 ---
 

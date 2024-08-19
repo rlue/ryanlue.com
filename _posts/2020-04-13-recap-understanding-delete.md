@@ -2,6 +2,7 @@
 title: "Reading Recap: Understanding Delete"
 teaser: A condensed summary of Juriy Zaytsev’s 2010 write-up
 category: recaps
+hidden: true
 tags: [javascript, language-internals]
 ---
 

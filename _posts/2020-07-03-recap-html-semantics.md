@@ -2,6 +2,7 @@
 title: "Reading Recap: About HTML Semantics and Front-End Architecture"
 teaser: A condensed summary of Nicolas Gallagher’s 2012 write-up.
 category: recaps
+hidden: true
 tags: [css]
 ---
 

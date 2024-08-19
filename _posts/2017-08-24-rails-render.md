@@ -2,6 +2,7 @@
 title: What Exactly Does Rails’ `render` Do?
 teaser: An in-depth look at what it does under the hood (particularly in controllers).
 category: fundamentals
+hidden: true
 tags: [rails]
 ---
 
