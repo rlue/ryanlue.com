@@ -110,11 +110,11 @@
   background-color: $basecolor;
   display: inline-block;
   position: relative;
-  @include transition(top, 0, 40ms);
-  &:hover { top: -2px; }
-  @include fontweight($weight: bold, $color: #fff);
   border-radius: 0.25rem;
+  @include transition(top, 0, 40ms);
+  @include fontweight($weight: bold, $color: #fff);
   @include edge(bottom, 2px, darken($basecolor, 15%));
+  &:hover { top: -2px; }
   &, &:link, &:hover, &:visited { border-bottom: 2px solid darken($basecolor, 15%); }
   &:hover { background-color: lighten($basecolor, 15%); }
   &:active { @include highlight(#fff, $basecolor); background-image: $icon; }
