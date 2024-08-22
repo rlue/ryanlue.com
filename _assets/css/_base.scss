@@ -35,6 +35,11 @@ b, strong { @include fontweight(bold); }
 
 dfn { @extend b; font-style: normal; }
 
+::selection {
+  color: #fff;
+  background: #22953c;
+}
+
 mark {
   @include fontweight(bold);
   @include highlight(#33a84d);
